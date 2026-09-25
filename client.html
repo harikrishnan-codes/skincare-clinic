@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Portal & Health File | Aura Skincare Clinic</title>
+    <title>Client dashboard</title>
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -229,6 +229,7 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            cursor: pointer;
         }
 
         .profile-avatar {
@@ -632,6 +633,28 @@
             color: var(--primary-deep);
         }
 
+        .user-email-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            max-width: 190px;
+            min-width: 0;
+        }
+
+        .user-email-chip span,
+        .profile-email-label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            .user-email-chip {
+                max-width: 280px;
+            }
+        }
+
         /* ==========================================================================
        MEDIA QUERY: TABLET & DESKTOP (768PX AND ABOVE)
        ========================================================================== */
@@ -721,8 +744,7 @@
             <div>
                 <div class="sidebar-header">
                     <a href="index.html" class="sidebar-brand">
-                        <i class="fa-solid fa-feather-pointed"></i>
-                        <span class="brand-title">Aura Patient</span>
+                        <img src="./assets/logo 20.webp" alt="logo" height="50px" width="150px">
                     </a>
                     <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
                         <i class="fa-solid fa-xmark"></i>
@@ -764,17 +786,18 @@
             </div>
 
             <!-- Authenticated Patient Profile Card -->
-            <div class="sidebar-footer">
+            <button class="sidebar-footer" onclick="window.location.href='error.html'">
                 <div class="profile-card">
                     <div class="profile-avatar">
                         <i class="fa-solid fa-user-check"></i>
                     </div>
                     <div class="profile-meta">
+
                         <strong class="profile-name" id="patientNameDisplay">Patient Account</strong>
                         <span class="profile-email-label" id="sidebarEmailDisplay">patient@auraclinic.com</span>
                     </div>
                 </div>
-            </div>
+            </button>
         </aside>
 
         <!-- ==========================================================================
@@ -791,28 +814,10 @@
                             <i class="fa-solid fa-bars"></i>
                         </button>
                         <div class="topbar-titles">
-                            <h1 class="topbar-title" id="pageTitleDisplay">Personal Treatment Plan</h1>
+                            <h1 class="topbar-title" id="pageTitleDisplay">Personal Client Treatment Plan</h1>
                             <span class="topbar-sub">Clearance: Patient Health Record #AUR-7712</span>
                         </div>
                     </div>
-
-                    <div class="topbar-controls">
-                        <!-- Notifications linking to error.html -->
-                        <a href="error.html" class="icon-action-btn" aria-label="Patient Notifications">
-                            <i class="fa-regular fa-bell"></i>
-                            <span class="alert-dot"></span>
-                        </a>
-                        <!-- Sign out linking to error.html -->
-                        <a href="error.html" class="icon-action-btn" aria-label="Sign Out">
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Authenticated Active Email Pill (Truncated on Small Screens) -->
-                <div class="user-email-chip" id="topbarEmailChip" title="Authenticated Patient Session">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span id="userEmailDisplay">patient@auraclinic.com</span>
                 </div>
             </header>
 
@@ -1130,6 +1135,31 @@
                 }
             });
         });
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedEmail = sessionStorage.getItem('current_logged_email');
+            const loggedName = sessionStorage.getItem('current_logged_name');
+
+            if (loggedEmail) {
+                const userEmailDisplay = document.getElementById('userEmailDisplay');
+                const sidebarEmailDisplay = document.getElementById('sidebarEmailDisplay');
+                const topbarEmailChip = document.getElementById('topbarEmailChip');
+
+                if (userEmailDisplay) userEmailDisplay.textContent = loggedEmail;
+                if (sidebarEmailDisplay) sidebarEmailDisplay.textContent = loggedEmail;
+                if (topbarEmailChip) topbarEmailChip.setAttribute('title', `Active Session: ${loggedEmail}`);
+            }
+
+            if (loggedName) {
+                const patientNameDisplay = document.getElementById('patientNameDisplay');
+                if (patientNameDisplay) patientNameDisplay.textContent = loggedName;
+            }
+        });
+
+
     </script>
 </body>
 

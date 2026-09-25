@@ -195,16 +195,26 @@ body.nav-locked {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* --- Mobile Drawer Backdrop --- */
+/* ==========================================================================
+   CLEAN MOBILE NAVIGATION & BACKDROP (NO DUPLICATES)
+   ========================================================================== */
+
+/* Prevent page scrolling when mobile menu is open */
+body.nav-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* Mobile Drawer Backdrop */
 .mobile-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(22, 42, 44, 0.45);
+  background-color: rgba(22, 42, 44, 0.55);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1000;
 }
 
@@ -213,11 +223,11 @@ body.nav-locked {
   visibility: visible;
 }
 
-/* --- Mobile Drawer Panel --- */
+/* Mobile Drawer Panel */
 .mobile-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
+  right: 0;
   width: 300px;
   max-width: 85vw;
   height: 100vh;
@@ -229,19 +239,54 @@ body.nav-locked {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
 }
 
 .mobile-drawer.is-open {
-  transform: translateX(-320px);
+  transform: translateX(0);
 }
 
 @media (min-width: 992px) {
   .mobile-drawer,
   .mobile-backdrop {
-    display: none;
+    display: none !important;
   }
+}
+
+/* Active Navigation Indicators (Header, Drawer, and Footer) */
+.desktop-nav .nav-link.active {
+  color: var(--primary-deep) !important;
+  font-weight: 700;
+}
+
+.desktop-nav .nav-link.active::after {
+  width: 100% !important;
+}
+
+.mobile-drawer .mobile-link.active {
+  background-color: var(--accent-blush-soft);
+  color: var(--primary-deep) !important;
+  font-weight: 700;
+  border-left: 3px solid var(--accent-copper);
+}
+
+.footer-links .footer-link.active {
+  color: var(--accent-blush) !important;
+  font-weight: 700;
+  transform: translateX(6px);
+}
+
+.footer-links .footer-link.active::before {
+  content: '→';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-copper);
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
 .drawer-header {
@@ -324,6 +369,8 @@ body.nav-locked {
   text-align: center;
   margin-bottom: 0;
 }
+
+
 
 
 
@@ -504,7 +551,8 @@ body.nav-locked {
   width: 100%;
   max-width: 440px;
   aspect-ratio: 4 / 4.8;
-  border-radius: 200px 200px 32px 32px; /* Arch top */
+  border-radius: 200px 200px 32px 32px;
+  /* Arch top */
   overflow: hidden;
   box-shadow: var(--shadow-lg), 0 20px 48px rgba(22, 42, 44, 0.08);
   border: 4px solid var(--bg-surface);
@@ -760,9 +808,9 @@ body.nav-locked {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1),
-              opacity 0.55s cubic-bezier(0.25, 1, 0.5, 1),
-              box-shadow 0.55s cubic-bezier(0.25, 1, 0.5, 1),
-              filter 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    filter 0.55s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
   user-select: none;
 }
@@ -1232,13 +1280,15 @@ body.nav-locked {
 .slider-before-wrap {
   position: absolute;
   inset: 0;
-  width: 50%; /* Initial split position */
+  width: 50%;
+  /* Initial split position */
   overflow: hidden;
   z-index: 2;
 }
 
 .slider-before-wrap .slider-img {
-  width: 480px; /* Locked to the max width of the container */
+  width: 480px;
+  /* Locked to the max width of the container */
   max-width: none;
 }
 
@@ -1574,10 +1624,29 @@ body.nav-locked {
   border-style: solid;
 }
 
-.reticle-corner.tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
-.reticle-corner.tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
-.reticle-corner.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
-.reticle-corner.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+.reticle-corner.tl {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+.reticle-corner.tr {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+
+.reticle-corner.bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+
+.reticle-corner.br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
 
 .scan-laser-line {
   position: absolute;
@@ -1591,10 +1660,23 @@ body.nav-locked {
 }
 
 @keyframes laserScan {
-  0% { top: 0; opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 .scan-badge {
@@ -1876,13 +1958,37 @@ body.nav-locked {
   animation: floatOrb 5s ease-in-out infinite alternate;
 }
 
-.bubble.b-1 { width: 34px; height: 34px; top: 22%; left: 25%; }
-.bubble.b-2 { width: 22px; height: 22px; bottom: 25%; right: 28%; animation-delay: -2s; }
-.bubble.b-3 { width: 14px; height: 14px; top: 40%; right: 22%; animation-delay: -3.5s; }
+.bubble.b-1 {
+  width: 34px;
+  height: 34px;
+  top: 22%;
+  left: 25%;
+}
+
+.bubble.b-2 {
+  width: 22px;
+  height: 22px;
+  bottom: 25%;
+  right: 28%;
+  animation-delay: -2s;
+}
+
+.bubble.b-3 {
+  width: 14px;
+  height: 14px;
+  top: 40%;
+  right: 22%;
+  animation-delay: -3.5s;
+}
 
 @keyframes floatOrb {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-16px) scale(1.08); }
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-16px) scale(1.08);
+  }
 }
 
 .chamber-hud {
@@ -2217,8 +2323,8 @@ body.nav-locked {
   visibility: hidden;
   transform: translateY(20px) scale(0.97);
   transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.55s ease;
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.55s ease;
   pointer-events: none;
 }
 
@@ -2978,9 +3084,21 @@ body.nav-locked {
 }
 
 @keyframes shakeError {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-5px); }
-  40%, 80% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 /* ==========================================================================

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physician Admin Portal | Aura Skincare Clinic</title>
+    <title>Admin dashboard</title>
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -230,6 +230,7 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            cursor: pointer;
         }
 
         .profile-avatar {
@@ -609,6 +610,28 @@
             color: var(--primary-deep);
         }
 
+        .user-email-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            max-width: 190px;
+            min-width: 0;
+        }
+
+        .user-email-chip span,
+        .profile-email-label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            .user-email-chip {
+                max-width: 280px;
+            }
+        }
+
         /* ==========================================================================
        MEDIA QUERY: TABLET & DESKTOP (768PX AND ABOVE)
        ========================================================================== */
@@ -700,8 +723,7 @@
             <div>
                 <div class="sidebar-header">
                     <a href="index.html" class="sidebar-brand">
-                        <i class="fa-solid fa-feather-pointed"></i>
-                        <span class="brand-title">Aura Medical</span>
+                        <img src="./assets/logo 20.webp" alt="logo" height="50px" width="150px">
                     </a>
                     <!-- Mobile Close Drawer Button -->
                     <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation">
@@ -751,7 +773,7 @@
             </div>
 
             <!-- Authenticated Profile Card in Sidebar -->
-            <div class="sidebar-footer">
+            <button class="sidebar-footer" onclick="window.location.href='auth.html'">
                 <div class="profile-card">
                     <div class="profile-avatar">
                         <i class="fa-solid fa-stethoscope"></i>
@@ -761,7 +783,7 @@
                         <span class="profile-email-label" id="sidebarEmailDisplay">Retrieving session...</span>
                     </div>
                 </div>
-            </div>
+            </button>
         </aside>
 
         <!-- ==========================================================================
@@ -783,24 +805,6 @@
                             <span class="topbar-sub">Department Status: ISO Class 6 Verified</span>
                         </div>
                     </div>
-
-                    <div class="topbar-controls">
-                        <!-- Alert Badge linking to error.html -->
-                        <a href="error.html" class="icon-action-btn" aria-label="Clinical Alerts">
-                            <i class="fa-regular fa-bell"></i>
-                            <span class="alert-dot"></span>
-                        </a>
-                        <!-- Signout / Fallback route linking to error.html -->
-                        <a href="error.html" class="icon-action-btn" aria-label="Log Out">
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Authenticated Active Email Pill (Auto-Truncated on Small Screens) -->
-                <div class="user-email-chip" id="topbarEmailChip" title="Authenticated Clinical Session">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span id="userEmailDisplay">doctor@auraclinic.com</span>
                 </div>
             </header>
 
@@ -1183,6 +1187,23 @@
                 }
             });
         });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedEmail = sessionStorage.getItem('current_logged_email');
+
+            if (loggedEmail) {
+                const userEmailDisplay = document.getElementById('userEmailDisplay');
+                const sidebarEmailDisplay = document.getElementById('sidebarEmailDisplay');
+                const topbarEmailChip = document.getElementById('topbarEmailChip');
+
+                if (userEmailDisplay) userEmailDisplay.textContent = loggedEmail;
+                if (sidebarEmailDisplay) sidebarEmailDisplay.textContent = loggedEmail;
+                if (topbarEmailChip) topbarEmailChip.setAttribute('title', `Active Session: ${loggedEmail}`);
+            }
+        });
+
+
     </script>
 </body>
 
