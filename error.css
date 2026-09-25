@@ -1,0 +1,309 @@
+/* ==========================================================================
+   404 ERROR PAGE STYLES WITH CLASSY ANIMATIONS
+   ========================================================================== */
+
+.error-page-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+/* --- Ambient Floating Glow Orbs --- */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+  animation: ambientFloat 14s ease-in-out infinite alternate;
+}
+
+.glow-1 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--accent-blush) 0%, rgba(232, 180, 184, 0) 70%);
+  top: -60px;
+  right: -50px;
+}
+
+.glow-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(197, 155, 123, 0.25) 0%, rgba(197, 155, 123, 0) 70%);
+  bottom: -100px;
+  left: -80px;
+  animation-duration: 18s;
+}
+
+@keyframes ambientFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 40px) scale(1.12); }
+  100% { transform: translate(-25px, -30px) scale(0.95); }
+}
+
+/* --- Main Card Layout --- */
+.error-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.error-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: 2.75rem 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(22, 42, 44, 0.03);
+  animation: cardFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Badge & Icon --- */
+.error-badge-wrapper {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.error-badge {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--accent-blush-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 1px solid var(--accent-blush);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.badge-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--accent-copper);
+  opacity: 0.6;
+  animation: ringRotate 22s linear infinite;
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Classy Typography Display (4-Drop-4) --- */
+.error-code-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  user-select: none;
+}
+
+.error-code-container .digit {
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 16vw, 7.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary-deep);
+  letter-spacing: -0.04em;
+  text-shadow: 0 4px 20px rgba(22, 42, 44, 0.08);
+}
+
+/* The Animated Water Droplet Replacing '0' */
+.droplet-container {
+  position: relative;
+  width: 60px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.25rem;
+}
+
+.droplet-shape {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--accent-blush) 0%, var(--accent-copper) 100%);
+  border-radius: 0% 50% 50% 50%;
+  transform: rotate(45deg);
+  box-shadow: 0 10px 24px rgba(197, 155, 123, 0.45);
+  animation: dropletPulse 3.5s ease-in-out infinite;
+}
+
+.ripple {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-copper);
+  opacity: 0;
+  animation: rippleSpread 3.5s ease-out infinite;
+}
+
+@keyframes dropletPulse {
+  0%, 100% {
+    transform: rotate(45deg) scale(0.95);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.1) translateY(-4px);
+  }
+}
+
+@keyframes rippleSpread {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+/* --- Content Titles & Text --- */
+.error-tagline {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-copper);
+  background: var(--bg-muted);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 0.85rem;
+}
+
+.error-heading {
+  font-size: clamp(1.65rem, 5vw, 2.25rem);
+  color: var(--primary-deep);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.error-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 2rem auto;
+}
+
+/* --- Action Buttons --- */
+.error-actions {
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.error-actions .btn {
+  width: 100%;
+}
+
+/* --- Footer Metadata --- */
+.error-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.error-footer-links a {
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--transition-fast);
+}
+
+.error-footer-links a:hover {
+  color: var(--accent-copper);
+}
+
+.bullet-dot {
+  color: var(--border-subtle);
+}
+
+/* ==========================================================================
+   768PX RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@media (min-width: 768px) {
+  .error-card {
+    padding: 3.5rem 3.25rem;
+  }
+
+  .droplet-container {
+    width: 80px;
+    height: 100px;
+  }
+
+  .droplet-shape {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ripple {
+    width: 56px;
+    height: 56px;
+  }
+
+  .error-actions {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+
+  .error-actions .btn {
+    width: auto;
+    min-width: 185px;
+  }
+
+  .error-badge-wrapper {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 2rem;
+  }
+
+  .error-badge {
+    font-size: 1.55rem;
+  }
+}

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="./assets/logo.webp">
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reviews.css">
+
+</head>
+<body>
+
+    <!-- Site Header -->
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo" aria-label="Aura Skincare Clinic">
+      <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Primary Navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+        <li><a href="about.html" class="nav-link">About Clinic</a></li>
+        <li><a href="specialists.html" class="nav-link">Dermatologists</a></li>
+        <li><a href="reviews.html" class="nav-link">Results</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Action Button -->
+    <div class="header-actions">
+      <a href="auth.html" class="btn btn-primary header-cta">
+        <span>Sign In</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar bar-top"></span>
+        <span class="bar bar-middle"></span>
+        <span class="bar bar-bottom"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-backdrop" id="menuBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+                <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link active">Home</a></li>
+      <li><a href="treatments.html" class="mobile-link">Treatments</a></li>
+      <li><a href="about.html" class="mobile-link">About Clinic</a></li>
+      <li><a href="specialists.html" class="mobile-link">Dermatologists</a></li>
+      <li><a href="reviews.html" class="mobile-link">Results</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="auth.html" class="btn btn-primary mobile-cta">
+        <span>Sign In</span>
+      </a>
+      <p class="drawer-note">Care Hotline: +91 98765 43210</p>
+    </div>
+  </aside>
+</header>
+
+
+
+
+
+
+<!-- Clinical Outcomes & Patient Results Hero Section -->
+<section class="results-hero-section" id="resultsHero">
+  <!-- Subtle Ambient Glows -->
+  <div class="results-ambient-glow glow-top-right" aria-hidden="true"></div>
+  <div class="results-ambient-glow glow-bottom-left" aria-hidden="true"></div>
+
+  <div class="results-hero-container">
+    
+    <!-- Left Column: Editorial Rigor & Case Verification -->
+    <div class="results-hero-content">
+      
+      <!-- Breadcrumb Pill -->
+      <div class="hero-breadcrumb-badge results-badge">
+        <a href="index.html" class="breadcrumb-root">Home</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">Documented Clinical Outcomes</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="results-hero-title">
+        Measurable Biology. <br>
+        <span class="results-title-highlight">Unfiltered Evidence.</span>
+      </h1>
+
+      <!-- Editorial Intro Copy -->
+      <p class="results-hero-lead">
+        Browse our archive of verified patient recoveries. Every case study presents cross-polarized sub-surface dermal scans, standardized non-retouched clinical photography, and objective lipid barrier capacitance measurements taken across 4 to 12 weeks.
+      </p>
+
+      <!-- Interactive Clinical Condition Filter Bar -->
+      <div class="results-filter-bar" role="tablist" aria-label="Clinical Condition Categories">
+        <button type="button" class="result-filter-chip active" data-condition="all">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>All Cases (48)</span>
+        </button>
+        <button type="button" class="result-filter-chip" data-condition="barrier">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Barrier &amp; TEWL</span>
+        </button>
+        <button type="button" class="result-filter-chip" data-condition="laser">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          <span>Laser Remodeling</span>
+        </button>
+        <button type="button" class="result-filter-chip" data-condition="acne">
+          <i class="fa-solid fa-droplet"></i>
+          <span>Inflammatory Acne</span>
+        </button>
+        <button type="button" class="result-filter-chip" data-condition="pigment">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+          <span>Melasma &amp; PIH</span>
+        </button>
+      </div>
+
+      <!-- Verified Clinical Standards Strip -->
+      <div class="results-trust-row">
+        <div class="results-trust-stat">
+          <span class="trust-digit">0%</span>
+          <span class="trust-caption">Digital Retouching</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="results-trust-stat">
+          <span class="trust-digit">100%</span>
+          <span class="trust-caption">Polarized Light Verification</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="results-trust-stat">
+          <span class="trust-digit">98.2%</span>
+          <span class="trust-caption">Barrier Recovery Rate</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Interactive Diagnostic Showcase Frame -->
+    <div class="results-hero-visual">
+      
+      <!-- Split-Screen Architectural Visual Frame -->
+      <div class="results-visual-frame">
+        <div class="visual-split-container">
+          <!-- Before Scan Segment -->
+          <div class="split-side side-before">
+            <img 
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" 
+              alt="Pre-treatment dermal inflammation and redness" 
+              class="scan-img"
+              loading="eager"
+            >
+            <span class="scan-tag tag-before">Baseline // Day 0</span>
+          </div>
+          <!-- After Scan Segment -->
+          <div class="split-side side-after">
+            <img 
+              src="https://images.unsplash.com/photo-1512290900672-1f5518b6e680?auto=format&fit=crop&w=700&q=80" 
+              alt="Post-treatment restored skin barrier equilibrium" 
+              class="scan-img"
+              loading="eager"
+            >
+            <span class="scan-tag tag-after">Equilibrium // Day 60</span>
+          </div>
+        </div>
+
+        <!-- Live Cross-Polarized Status Overlay -->
+        <div class="results-status-overlay">
+          <span class="status-pulse-dot"></span>
+          <span>Polarized Multi-Spectral Match: 99.4%</span>
+        </div>
+      </div>
+
+      <!-- Floating Clinical Case Card -->
+      <div class="floating-case-card">
+        <div class="case-card-icon">
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <div class="case-card-text">
+          <strong class="case-title">Case Study #AUR-8821</strong>
+          <span class="case-sub">Sub-surface erythema reduction: -82% in 8 weeks</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Retro-Futurism & Vaporwave Dermal Telemetry Section -->
+<section class="results-vapor-section" id="dermalTelemetry">
+  <!-- Perspective Cyber-Floor & Ambient Synthwave Glow -->
+  <div class="vapor-sky-wireframe" aria-hidden="true">
+    <div class="vapor-gradient-sun"></div>
+    <div class="vapor-vector-grid"></div>
+    <div class="vapor-laser-horizon"></div>
+  </div>
+
+  <div class="results-vapor-container">
+    
+    <!-- Section Header (Cyber-Editorial Typography) -->
+    <div class="results-vapor-header">
+      <div class="pill-badge retro-pill">
+        <span class="badge-dot retro-dot"></span>
+        <span class="badge-text">Optical Telemetry &bull; SYS_CODENAME: CHROMA_1984</span>
+      </div>
+      <h2 class="results-vapor-title">
+        Analog Waveforms. <br>
+        <span class="retro-neon-glow">Sub-Surface Quantum Verification.</span>
+      </h2>
+      <p class="results-vapor-desc">
+        Quantifying dermal equilibrium beyond visible light. We capture skin restitution through multi-spectral chromatic channels, measuring sub-surface porphyrin clearance, vascular redness indices, and dermal thickness.
+      </p>
+    </div>
+
+    <!-- Retro Terminal Cards Grid -->
+    <div class="vapor-telemetry-grid">
+      
+      <!-- Telemetry Card 1: 585nm Vascular Loop Mapping -->
+      <article class="telemetry-card" data-channel="vascular">
+        <div class="card-bezel-top">
+          <span class="bezel-code">CH-01 // 585 NM</span>
+          <span class="bezel-status neon-cyan">Erythema Normalized</span>
+        </div>
+
+        <div class="crt-telemetry-screen">
+          <div class="crt-scanline"></div>
+          
+          <div class="telemetry-hud-top">
+            <span class="hud-label">&gt; HEMOGLOBIN_ABSORPTION:</span>
+            <span class="hud-metric">-84.2%</span>
+          </div>
+
+          <!-- Oscillating Waveform Graph -->
+          <div class="telemetry-waveform-box">
+            <div class="waveform-bars cyan-wave">
+              <span class="w-bar bar-1"></span>
+              <span class="w-bar bar-2"></span>
+              <span class="w-bar bar-3"></span>
+              <span class="w-bar bar-4"></span>
+              <span class="w-bar bar-5"></span>
+              <span class="w-bar bar-6"></span>
+            </div>
+            <span class="waveform-readout">PULSE: 0.45 ms &bull; FLUENCE: 7.2 J/cm²</span>
+          </div>
+
+          <p class="telemetry-card-desc">
+            Resolution of dilated microvascular capillaries and chronic inflammatory erythema following dual-frequency vascular laser and lipid restoration compounding.
+          </p>
+
+          <div class="telemetry-stats-pill">
+            <div class="t-stat">
+              <span class="t-val">3 Sessions</span>
+              <span class="t-key">Protocol</span>
+            </div>
+            <div class="t-sep"></div>
+            <div class="t-stat">
+              <span class="t-val">Day 45</span>
+              <span class="t-key">Benchmark</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-bezel-bottom">
+          <span class="bezel-badge">CASE_ID: #VAS-585</span>
+          <a href="#booking" class="telemetry-link">
+            <span>Inspect Protocol</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Telemetry Card 2: 415nm Melanin Uniformity (Featured) -->
+      <article class="telemetry-card featured-telemetry" data-channel="pigment">
+        <div class="card-bezel-top">
+          <span class="bezel-code">CH-02 // 415 NM</span>
+          <span class="bezel-status neon-copper">Melanin Clustered</span>
+        </div>
+
+        <div class="crt-telemetry-screen">
+          <div class="crt-scanline"></div>
+          
+          <div class="telemetry-hud-top">
+            <span class="hud-label">&gt; EPIDERMAL_MELANIN_DENSITY:</span>
+            <span class="hud-metric text-copper">-78.6%</span>
+          </div>
+
+          <!-- Oscillating Waveform Graph -->
+          <div class="telemetry-waveform-box copper-wave">
+            <div class="waveform-bars">
+              <span class="w-bar bar-2"></span>
+              <span class="w-bar bar-4"></span>
+              <span class="w-bar bar-1"></span>
+              <span class="w-bar bar-6"></span>
+              <span class="w-bar bar-3"></span>
+              <span class="w-bar bar-5"></span>
+            </div>
+            <span class="waveform-readout">UV-CROSS-POLARIZED // PASS-RATE: 99.1%</span>
+          </div>
+
+          <p class="telemetry-card-desc">
+            Clearance of recalcitrant epidermal melasma and stubborn post-inflammatory hyperpigmentation without heat-induced rebound dyschromia.
+          </p>
+
+          <div class="telemetry-stats-pill">
+            <div class="t-stat">
+              <span class="t-val">6 Weeks</span>
+              <span class="t-key">Duration</span>
+            </div>
+            <div class="t-sep"></div>
+            <div class="t-stat">
+              <span class="t-val">99.8%</span>
+              <span class="t-key">Tolerance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-bezel-bottom">
+          <span class="bezel-badge">CASE_ID: #PIG-415</span>
+          <a href="#booking" class="telemetry-link highlight-link">
+            <span>Inspect Protocol</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Telemetry Card 3: 830nm Cellular Matrix Density -->
+      <article class="telemetry-card" data-channel="collagen">
+        <div class="card-bezel-top">
+          <span class="bezel-code">CH-03 // 830 NM</span>
+          <span class="bezel-status neon-pink">Fibroblast Remodeled</span>
+        </div>
+
+        <div class="crt-telemetry-screen">
+          <div class="crt-scanline"></div>
+          
+          <div class="telemetry-hud-top">
+            <span class="hud-label">&gt; RETICULAR_COLLAGEN_LIFT:</span>
+            <span class="hud-metric text-pink">+310%</span>
+          </div>
+
+          <!-- Oscillating Waveform Graph -->
+          <div class="telemetry-waveform-box pink-wave">
+            <div class="waveform-bars">
+              <span class="w-bar bar-3"></span>
+              <span class="w-bar bar-5"></span>
+              <span class="w-bar bar-6"></span>
+              <span class="w-bar bar-2"></span>
+              <span class="w-bar bar-4"></span>
+              <span class="w-bar bar-1"></span>
+            </div>
+            <span class="waveform-readout">ACOUSTIC ELASTOMETRY // T-INDEX: 4.8</span>
+          </div>
+
+          <p class="telemetry-card-desc">
+            Re-scaffolded dermal thickness, improved skin tensile strength, and restored physiological epidermal capacitance for smooth glass-skin reflection.
+          </p>
+
+          <div class="telemetry-stats-pill">
+            <div class="t-stat">
+              <span class="t-val">4 Sessions</span>
+              <span class="t-key">Compounded</span>
+            </div>
+            <div class="t-sep"></div>
+            <div class="t-stat">
+              <span class="t-val">0 Downtime</span>
+              <span class="t-key">Recovery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-bezel-bottom">
+          <span class="bezel-badge">CASE_ID: #COL-830</span>
+          <a href="#booking" class="telemetry-link">
+            <span>Inspect Protocol</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Retro Terminal Footer Bar -->
+    <div class="telemetry-terminal-footer">
+      <div class="terminal-feed">
+        <span class="terminal-prompt">[SYSTEM AUDIT]</span>
+        <span>ALL PATIENT DATA QUANTIFIED ON CROSS-POLARIZED CANFIELD SENSORS</span>
+      </div>
+      <div class="terminal-status">
+        <i class="fa-solid fa-circle-nodes"></i>
+        <span>NEON TELEMETRY: REAL-TIME LINK</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Interactive Before/After Split-Screen Showcase Section -->
+<section class="split-slider-section" id="caseStudies">
+  <div class="split-container">
+    
+    <!-- Section Header -->
+    <div class="split-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Interactive Photometric Inspection</span>
+      </div>
+      <h2 class="split-title">
+        Cross-Polarized <span class="highlight-italic">Recovery Slider.</span>
+      </h2>
+      <p class="split-desc">
+        Drag the optical divider horizontally to inspect cutaneous recovery. All imagery is captured under calibrated studio flash illumination with zero digital retouches or chromatic grading.
+      </p>
+    </div>
+
+    <!-- Main Interactive Slider Shell -->
+    <div class="split-viewport" id="splitViewport">
+      
+      <!-- After Image (Background Layer) -->
+      <div class="split-layer layer-after">
+        <img 
+          src="https://images.unsplash.com/photo-1512290900672-1f5518b6e680?auto=format&fit=crop&w=1200&q=80" 
+          alt="Restored dermal barrier after clinical treatment" 
+          class="split-img"
+          loading="lazy"
+        >
+        <span class="view-tag tag-after">Equilibrium // Week 8</span>
+      </div>
+
+      <!-- Before Image (Clipped Foreground Layer) -->
+      <div class="split-layer layer-before" id="layerBefore">
+        <img 
+          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" 
+          alt="Impaired skin barrier prior to treatment" 
+          class="split-img"
+          loading="lazy"
+        >
+        <span class="view-tag tag-before">Baseline // Day 0</span>
+      </div>
+
+      <!-- Draggable Split Curtain Handle -->
+      <div class="split-handle" id="splitHandle">
+        <div class="handle-line"></div>
+        <div class="handle-knob">
+          <i class="fa-solid fa-arrows-left-right"></i>
+        </div>
+        <div class="handle-line"></div>
+      </div>
+
+      <!-- Live Clinical Measurement Badge -->
+      <div class="split-live-data">
+        <span class="data-indicator-dot"></span>
+        <span>Stratum Corneum TEWL: Normalized &bull; pH 5.4</span>
+      </div>
+
+    </div>
+
+    <!-- Case Verification Metadata Card -->
+    <div class="split-meta-card">
+      <div class="meta-col">
+        <span class="meta-label">Patient Diagnosis</span>
+        <strong class="meta-value">Grade III Barrier Dehydration &amp; Erythema</strong>
+      </div>
+      <div class="meta-sep"></div>
+      <div class="meta-col">
+        <span class="meta-label">Administered Protocol</span>
+        <strong class="meta-value">Non-Ablative Laser &amp; 3:1:1 Lipid Compounding</strong>
+      </div>
+      <div class="meta-sep"></div>
+      <div class="meta-col">
+        <span class="meta-label">Recovery Benchmark</span>
+        <strong class="meta-value text-accent">-84.6% Microvascular Redness</strong>
+      </div>
+      <div class="meta-sep"></div>
+      <div class="meta-col action-col">
+        <a href="#booking" class="btn btn-primary split-btn">
+          <span>Book Similar Protocol</span>
+          <i class="fa-solid fa-arrow-right btn-icon"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Clinical Case Studies & Quantitative Metrics Dossier -->
+<section class="results-dossier-section" id="clinicalDossier">
+  <div class="dossier-container">
+    
+    <!-- Section Header -->
+    <div class="dossier-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Peer-Monitored Recovery Data</span>
+      </div>
+      <h2 class="dossier-title">
+        Documented Restitution. <br>
+        <span class="highlight-italic">Case Archive &amp; Bio-Gauges.</span>
+      </h2>
+      <p class="dossier-desc">
+        Standardized histological and optical benchmarks collected from over 1,200 longitudinal patient cohorts. We record physical capacitance, microvascular erythema, and epidermal thickness.
+      </p>
+    </div>
+
+    <!-- Case Studies & Metrics Grid -->
+    <div class="dossier-grid">
+      
+      <!-- Dossier Card 01: Severe Barrier Collapse -->
+      <article class="dossier-card" data-category="barrier">
+        <div class="dossier-card-top">
+          <div class="dossier-meta">
+            <span class="cohort-tag">Cohort Case #0842</span>
+            <span class="time-tag"><i class="fa-regular fa-clock"></i> 6 Weeks Restitution</span>
+          </div>
+          <span class="status-verified"><i class="fa-solid fa-circle-check"></i> Spectrally Verified</span>
+        </div>
+
+        <div class="dossier-body">
+          <h3 class="dossier-case-name">Chronic Stratum Corneum Impairment</h3>
+          <p class="dossier-case-summary">
+            Patient presented with extreme chemical peeling trauma, high transepidermal water loss (TEWL), and stinging intolerance. Prescribed bio-identical 3:1:1 physiological lipid compounding and zero exfoliating acids.
+          </p>
+
+          <!-- Quantitative Restitution Metrics Grid -->
+          <div class="dossier-metrics-strip">
+            <div class="d-metric">
+              <span class="metric-num">-76.4%</span>
+              <span class="metric-caption">TEWL Evaporation</span>
+            </div>
+            <div class="d-metric-sep"></div>
+            <div class="d-metric">
+              <span class="metric-num">pH 5.4</span>
+              <span class="metric-caption">Acid Mantle Stabilized</span>
+            </div>
+            <div class="d-metric-sep"></div>
+            <div class="d-metric">
+              <span class="metric-num">+180%</span>
+              <span class="metric-caption">Lipid Bilayer Density</span>
+            </div>
+          </div>
+
+          <!-- Physician Attestation Tag -->
+          <div class="attestation-row">
+            <div class="attestation-doc">
+              <i class="fa-solid fa-user-doctor"></i>
+              <span>Attending: Dr. Elena Vance, MD</span>
+            </div>
+            <a href="#booking" class="dossier-inspect-btn">
+              <span>View Full Case File</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dossier Card 02: Atrophic Acne Remodeling -->
+      <article class="dossier-card" data-category="laser">
+        <div class="dossier-card-top">
+          <div class="dossier-meta">
+            <span class="cohort-tag">Cohort Case #1109</span>
+            <span class="time-tag"><i class="fa-regular fa-clock"></i> 10 Weeks Restitution</span>
+          </div>
+          <span class="status-verified"><i class="fa-solid fa-circle-check"></i> Spectrally Verified</span>
+        </div>
+
+        <div class="dossier-body">
+          <h3 class="dossier-case-name">Fibrotic Scarring &amp; Dermal Thinning</h3>
+          <p class="dossier-case-summary">
+            Post-cystic scarring exhibiting localized loss of reticular elastin. Treated with dual non-ablative Erbium photon arrays paired with cold-chain marine PDRN polynucleotide micro-infusions.
+          </p>
+
+          <div class="dossier-metrics-strip">
+            <div class="d-metric">
+              <span class="metric-num">+64.8%</span>
+              <span class="metric-caption">Reticular Collagen Lift</span>
+            </div>
+            <div class="d-metric-sep"></div>
+            <div class="d-metric">
+              <span class="metric-num">0 Hrs</span>
+              <span class="metric-caption">Post-Procedure Downtime</span>
+            </div>
+            <div class="d-metric-sep"></div>
+            <div class="d-metric">
+              <span class="metric-num">99.2%</span>
+              <span class="metric-caption">Epidermal Smoothness</span>
+            </div>
+          </div>
+
+          <div class="attestation-row">
+            <div class="attestation-doc">
+              <i class="fa-solid fa-user-doctor"></i>
+              <span>Attending: Dr. Marcus Thorne, MD</span>
+            </div>
+            <a href="#booking" class="dossier-inspect-btn">
+              <span>View Full Case File</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dossier Card 03: Refractory Melasma & PIH -->
+      <article class="dossier-card" data-category="pigment">
+        <div class="dossier-card-top">
+          <div class="dossier-meta">
+            <span class="cohort-tag">Cohort Case #1428</span>
+            <span class="time-tag"><i class="fa-regular fa-clock"></i> 8 Weeks Restitution</span>
+          </div>
+          <span class="status-verified"><i class="fa-solid fa-circle-check"></i> Spectrally Verified</span>
+        </div>
+
+        <div class="dossier-body">
+          <h3 class="dossier-case-name">Deep Dermal Hyperpigmentation</h3>
+          <p class="dossier-case-summary">
+            Centrodermal melanin pooling aggravated by intense heat-based devices. Resolved using targeted tyrosinase-inhibiting botanical salicin and buffered cold azelaic suspensions under strict UV blocking.
+          </p>
+
+          <div class="dossier-metrics-strip">
+            <div class="d-metric">
+              <span class="metric-num">-81.5%</span>
+              <span class="metric-caption">Melanin Contrast Index</span>
+            </div>
+            <div class="d-metric-sep"></div>
+            <div class="d-metric">
+              <span class="metric-num">Zero</span>
+              <span class="metric-caption">Rebound Erythema</span>
+            </div>
+            <div class="d-metric-sep"></div>
+            <div class="d-metric">
+              <span class="metric-num">100%</span>
+              <span class="metric-caption">Tone Uniformity Index</span>
+            </div>
+          </div>
+
+          <div class="attestation-row">
+            <div class="attestation-doc">
+              <i class="fa-solid fa-user-doctor"></i>
+              <span>Attending: Dr. Sanya Patel, MD</span>
+            </div>
+            <a href="#booking" class="dossier-inspect-btn">
+              <span>View Full Case File</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Footnote Scientific Compliance Bar -->
+    <div class="dossier-footer-bar">
+      <div class="dossier-foot-col">
+        <i class="fa-solid fa-microscope"></i>
+        <span>Canfield Scientific 3D Polarized Imaging Protocol</span>
+      </div>
+      <div class="dossier-foot-sep"></div>
+      <div class="dossier-foot-col">
+        <i class="fa-solid fa-shield-virus"></i>
+        <span>Ethical Medical Board Review &bull; Zero Digital Filters</span>
+      </div>
+      <div class="dossier-foot-sep"></div>
+      <div class="dossier-foot-col">
+        <i class="fa-solid fa-file-waveform"></i>
+        <span>Audited Against ISO 14155 Clinical Investigation Standards</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Clinical Progression Matrix & Time-Horizon Benchmarks -->
+<section class="results-progression-section" id="progressionMatrix">
+  <div class="progression-container">
+    
+    <!-- Section Header -->
+    <div class="progression-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Cellular Trajectory &amp; Homeostasis</span>
+      </div>
+      <h2 class="progression-title">
+        The Biological Timeline. <br>
+        <span class="highlight-italic">Week-by-Week Epidermal Restitution.</span>
+      </h2>
+      <p class="progression-desc">
+        True skin barrier reconstruction follows physiological cell-turnover cycles. Track the quantitative milestones observed across standardized multi-spectral monitoring intervals.
+      </p>
+    </div>
+
+    <!-- Time-Horizon Progression Grid -->
+    <div class="progression-grid">
+      
+      <!-- Stage 01: Acute Reset -->
+      <article class="progression-card" data-stage="1">
+        <div class="progression-phase-tag">
+          <span class="phase-number">PHASE 01</span>
+          <span class="phase-time">Days 1 – 7</span>
+        </div>
+        
+        <div class="progression-visual-indicator">
+          <div class="biomarker-gauge">
+            <span class="gauge-fill" style="width: 35%;"></span>
+          </div>
+          <span class="biomarker-label">Acid Mantle Stabilization: 35%</span>
+        </div>
+
+        <div class="progression-body">
+          <h3 class="progression-heading">Acute Barrier Quenching</h3>
+          <p class="progression-text">
+            Arrests transepidermal water evaporation through bio-identical ceramide occlusion. Burning sensation and reactive erythema diminish as stratum corneum pH normalizes to 5.4.
+          </p>
+
+          <ul class="milestone-list">
+            <li><i class="fa-solid fa-circle-check"></i> -42% Subjective stinging response</li>
+            <li><i class="fa-solid fa-circle-check"></i> Transepidermal water seal initiated</li>
+            <li><i class="fa-solid fa-circle-check"></i> Zero desquamation aggravation</li>
+          </ul>
+        </div>
+
+        <div class="progression-card-footer">
+          <span class="indicator-badge">Target: TEWL Halting</span>
+        </div>
+      </article>
+
+      <!-- Stage 02: Desquamation Normalization -->
+      <article class="progression-card" data-stage="2">
+        <div class="progression-phase-tag">
+          <span class="phase-number">PHASE 02</span>
+          <span class="phase-time">Weeks 2 – 4</span>
+        </div>
+        
+        <div class="progression-visual-indicator">
+          <div class="biomarker-gauge">
+            <span class="gauge-fill" style="width: 65%;"></span>
+          </div>
+          <span class="biomarker-label">Lipid Bilayer Re-Scaffolding: 65%</span>
+        </div>
+
+        <div class="progression-body">
+          <h3 class="progression-heading">Cellular Turn-Over Alignment</h3>
+          <p class="progression-text">
+            Desmosome release cycle regularizes. Rough keratinocyte clumping smooths out without aggressive exfoliation, unlocking natural physiological moisture retention.
+          </p>
+
+          <ul class="milestone-list">
+            <li><i class="fa-solid fa-circle-check"></i> +58% Epidermal capacitance index</li>
+            <li><i class="fa-solid fa-circle-check"></i> Microvascular capillary constriction</li>
+            <li><i class="fa-solid fa-circle-check"></i> Reduced follicular congestion</li>
+          </ul>
+        </div>
+
+        <div class="progression-card-footer">
+          <span class="indicator-badge">Target: Natural Hydration</span>
+        </div>
+      </article>
+
+      <!-- Stage 03: Dermal Synthesis -->
+      <article class="progression-card featured-progression" data-stage="3">
+        <div class="progression-phase-tag featured-tag">
+          <span class="phase-number">PHASE 03</span>
+          <span class="phase-time">Weeks 5 – 8</span>
+        </div>
+        
+        <div class="progression-visual-indicator">
+          <div class="biomarker-gauge">
+            <span class="gauge-fill copper-fill" style="width: 88%;"></span>
+          </div>
+          <span class="biomarker-label">Neo-Collagen Proliferation: 88%</span>
+        </div>
+
+        <div class="progression-body">
+          <h3 class="progression-heading">Fibroblast Matrix Remodeling</h3>
+          <p class="progression-text">
+            Dermal-epidermal junction thickens. Targeted polynucleotides and copper tripeptides stimulate Type I &amp; III collagen synthesis, improving tissue elasticity and smoothing fine texture.
+          </p>
+
+          <ul class="milestone-list">
+            <li><i class="fa-solid fa-circle-check"></i> +72% Cutaneous tensile bounce</li>
+            <li><i class="fa-solid fa-circle-check"></i> -81% Sub-surface latent redness</li>
+            <li><i class="fa-solid fa-circle-check"></i> Optical clarity &amp; light refraction</li>
+          </ul>
+        </div>
+
+        <div class="progression-card-footer">
+          <span class="indicator-badge featured-badge">Target: Structural Density</span>
+        </div>
+      </article>
+
+      <!-- Stage 04: Homeostasis Lock -->
+      <article class="progression-card" data-stage="4">
+        <div class="progression-phase-tag">
+          <span class="phase-number">PHASE 04</span>
+          <span class="phase-time">Weeks 9 – 12+</span>
+        </div>
+        
+        <div class="progression-visual-indicator">
+          <div class="biomarker-gauge">
+            <span class="gauge-fill" style="width: 98%;"></span>
+          </div>
+          <span class="biomarker-label">Homeostatic Equilibrium: 98%</span>
+        </div>
+
+        <div class="progression-body">
+          <h3 class="progression-heading">Enduring Photoprotective Lock</h3>
+          <p class="progression-text">
+            Full cellular self-defense restored. The skin effectively repels environmental oxidative aggressors, maintains barrier integrity against seasonal shifts, and preserves uniform optical glow.
+          </p>
+
+          <ul class="milestone-list">
+            <li><i class="fa-solid fa-circle-check"></i> Zero rebound sensitivity incidents</li>
+            <li><i class="fa-solid fa-circle-check"></i> Sustained 24-hour hydration mantle</li>
+            <li><i class="fa-solid fa-circle-check"></i> Long-term pigment balance achieved</li>
+          </ul>
+        </div>
+
+        <div class="progression-card-footer">
+          <span class="indicator-badge">Target: Full Resilience</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Clinical Protocol Guarantee Strip -->
+    <div class="progression-guarantee-strip">
+      <div class="guarantee-col">
+        <i class="fa-solid fa-dna"></i>
+        <span>Cellular Recovery Documented on High-Res Profilometry</span>
+      </div>
+      <div class="guarantee-sep"></div>
+      <div class="guarantee-col">
+        <i class="fa-solid fa-clipboard-check"></i>
+        <span>Bi-Weekly Physician Scan Audits Included</span>
+      </div>
+      <div class="guarantee-sep"></div>
+      <div class="guarantee-col">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Zero Steroids, Harsh Bleaches, or Habit-Forming Additives</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Site Footer -->
+<footer class="site-footer" id="siteFooter">
+  <div class="footer-container">
+    <!-- Top Grid Layout -->
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Clinical Statement -->
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo" aria-label="Aura Skincare Clinic">
+          <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+        </a>
+        <p class="brand-desc">
+          Evidence-based dermatological therapies and customized skin health regimens guided by licensed practitioners.
+        </p>
+        <div class="social-links" aria-label="Social Media">
+          <a href="error.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="error.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="error.html" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="error.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links (Synced with Scrollspy) -->
+      <div class="footer-col">
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link active">Home</a></li>
+          <li><a href="treatments.html" class="footer-link">Treatments</a></li>
+          <li><a href="about.html" class="footer-link">About Clinic</a></li>
+          <li><a href="specialists.html" class="footer-link">Dermatologists</a></li>
+          <li><a href="reviews.html" class="footer-link">Results</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Key Treatments -->
+      <div class="footer-col">
+        <h4 class="footer-title">Clinical Solutions</h4>
+        <ul class="footer-links static-links">
+          <li><a href="#treatments">Laser Skin Resurfacing</a></li>
+          <li><a href="#treatments">Chemical Peels & Glycolic</a></li>
+          <li><a href="#treatments">Targeted Acne Extraction</a></li>
+          <li><a href="#treatments">Dermal Barrier Infusions</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Clinic Info & Hours -->
+      <div class="footer-col">
+        <h4 class="footer-title">Clinic Hours</h4>
+        <ul class="schedule-list">
+          <li>
+            <span class="schedule-day">Mon - Fri:</span>
+            <span class="schedule-time">09:00 AM - 07:00 PM</span>
+          </li>
+          <li>
+            <span class="schedule-day">Saturday:</span>
+            <span class="schedule-time">10:00 AM - 05:00 PM</span>
+          </li>
+          <li>
+            <span class="schedule-day">Sunday:</span>
+            <span class="schedule-status">By Prior Appointment</span>
+          </li>
+        </ul>
+        <div class="footer-badge">
+          <i class="fa-solid fa-certificate"></i>
+          <span>ISO 9001 Certified Dermatology Unit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        &copy; 2026 Aura Skincare Clinic. All rights reserved.
+      </p>
+      <div class="legal-links">
+        <a href="error.html">Privacy Policy</a>
+        <span class="divider">&bull;</span>
+        <a href="error.html">Terms of Care</a>
+        <span class="divider">&bull;</span>
+        <a href="error.html">Medical Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+        <script src="specialists.js"></script>
+    
+</body>
+</html>

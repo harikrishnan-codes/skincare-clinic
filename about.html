@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="./assets/logo.webp">
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+
+</head>
+<body>
+
+    <!-- Site Header -->
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo" aria-label="Aura Skincare Clinic">
+      <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Primary Navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+        <li><a href="about.html" class="nav-link">About Clinic</a></li>
+        <li><a href="specialists.html" class="nav-link">Dermatologists</a></li>
+        <li><a href="reviews.html" class="nav-link">Results</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Action Button -->
+    <div class="header-actions">
+      <a href="auth.html" class="btn btn-primary header-cta">
+        <span>Sign In</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar bar-top"></span>
+        <span class="bar bar-middle"></span>
+        <span class="bar bar-bottom"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-backdrop" id="menuBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+                <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link active">Home</a></li>
+      <li><a href="treatments.html" class="mobile-link">Treatments</a></li>
+      <li><a href="about.html" class="mobile-link">About Clinic</a></li>
+      <li><a href="specialists.html" class="mobile-link">Dermatologists</a></li>
+      <li><a href="reviews.html" class="mobile-link">Results</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="auth.html" class="btn btn-primary mobile-cta">
+        <span>Sign In</span>
+      </a>
+      <p class="drawer-note">Care Hotline: +91 98765 43210</p>
+    </div>
+  </aside>
+</header>
+
+
+
+
+
+
+<!-- About Clinic Hero / Intro Section -->
+<section class="about-hero-section" id="aboutHero">
+  <!-- Subtle Ambient Glow Orbs -->
+  <div class="about-ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="about-ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <div class="about-hero-container">
+    
+    <!-- Left Column: Clinical Philosophy, Heritage & Statement -->
+    <div class="about-hero-content">
+      
+      <!-- Breadcrumb Badge -->
+      <div class="hero-breadcrumb-badge about-badge">
+        <a href="index.html" class="breadcrumb-root">Home</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">Clinical Heritage & Mission</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="about-hero-title">
+        Rooted in Science. <br>
+        <span class="about-title-highlight">Devoted to Barrier Health.</span>
+      </h1>
+
+      <!-- Editorial Intro Copy -->
+      <p class="about-hero-lead">
+        Founded in 2018 by board-certified dermatological practitioners, Aura Skincare Clinic was conceived as an alternative to quick-fix cosmetics. We engineer physiological skin therapies grounded in lipid biology, multi-spectral diagnostics, and zero-cellular trauma.
+      </p>
+
+      <!-- Founder Clinical Oath Blockquote -->
+      <div class="founder-oath-card">
+        <div class="oath-quote-icon">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+        <div class="oath-body">
+          <blockquote class="oath-text">
+            “True cutaneous radiance isn’t manufactured with harsh abrasives—it is unlocked when you restore the skin’s biological barrier to its natural pH equilibrium.”
+          </blockquote>
+          <div class="oath-signature-row">
+            <div class="founder-meta">
+              <strong class="founder-name">Dr. Elena Vance, MD, FAAD</strong>
+              <span class="founder-role">Lead Dermatological Chemist & Medical Director</span>
+            </div>
+            <div class="board-seal">
+              <i class="fa-solid fa-certificate"></i>
+              <span>Board Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Metrics Bar -->
+      <div class="about-trust-row">
+        <div class="about-stat">
+          <span class="stat-number">8+</span>
+          <span class="stat-caption">Years Clinical Research</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="about-stat">
+          <span class="stat-number">14k+</span>
+          <span class="stat-caption">Restored Epidermal Mantles</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="about-stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-caption">Physician-Led Protocols</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Multi-Layer Architectural Clinic Visual -->
+    <div class="about-hero-visual">
+      
+      <!-- Primary Architectural Portrait Frame -->
+      <div class="about-visual-frame">
+        <img 
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" 
+          alt="Aura Skincare Clinic sterile compounding laboratory and diagnostic suite" 
+          class="about-hero-img"
+          loading="eager"
+        >
+        
+        <!-- Live Diagnostic Badge Overlay -->
+        <div class="clinic-status-overlay">
+          <span class="status-pulse-indicator"></span>
+          <span>Cleanroom ISO Class 6 Sterile Facility</span>
+        </div>
+      </div>
+
+      <!-- Floating Clinical Credential Pod -->
+      <div class="floating-credential-pod">
+        <div class="pod-icon">
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <div class="pod-info">
+          <span class="pod-title">Evidence-Based Medicine</span>
+          <span class="pod-desc">Published research in Dermal Phototherapy</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Clinical Evolution & Animated SVG Stroke Timeline Section -->
+<section class="stroke-timeline-section" id="evolution">
+  <div class="timeline-container">
+    
+    <!-- Section Header -->
+    <div class="timeline-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Clinical Chronology & Milestones</span>
+      </div>
+      <h2 class="timeline-title">
+        The Path to <span class="highlight-italic">Cellular Equilibrium.</span>
+      </h2>
+      <p class="timeline-desc">
+        Trace the clinical breakthroughs, patent compounding licenses, and academic dermatology partnerships that define our physiological approach to skin health.
+      </p>
+    </div>
+
+    <!-- Interactive SVG Drawing Timeline Stage -->
+    <div class="timeline-stage" id="timelineStage">
+      
+      <!-- SVG Connecting Vector with Animated Stroke Dash -->
+      <svg class="timeline-svg-spine" viewBox="0 0 8 1000" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Static background guide path -->
+        <line x1="4" y1="0" x2="4" y2="1000" class="spine-base" />
+        <!-- Animated Drawing Stroke Path -->
+        <line x1="4" y1="0" x2="4" y2="1000" class="spine-animated" id="animatedStrokeLine" />
+      </svg>
+
+      <div class="timeline-nodes-list">
+        
+        <!-- Node 1: 2018 Foundation -->
+        <article class="timeline-node" data-year="2018">
+          <div class="node-marker">
+            <span class="marker-core"></span>
+            <span class="marker-pulse"></span>
+          </div>
+          <div class="node-card">
+            <div class="node-meta">
+              <span class="node-year">2018</span>
+              <span class="node-status-tag">Foundation</span>
+            </div>
+            <h3 class="node-title">Inception of Lipid Mantle Research</h3>
+            <p class="node-text">
+              Dr. Elena Vance and three board dermatologists establish the initial lab in Zurich, targeting transepidermal water loss (TEWL) using bio-mimetic lipid ratios rather than abrasive keratolytics.
+            </p>
+            <div class="node-achievement">
+              <i class="fa-solid fa-flask-vial"></i>
+              <span>Patented 3:1:1 Physiological Lipid Formulation</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Node 2: 2021 Clinical Expansion -->
+        <article class="timeline-node" data-year="2021">
+          <div class="node-marker">
+            <span class="marker-core"></span>
+            <span class="marker-pulse"></span>
+          </div>
+          <div class="node-card">
+            <div class="node-meta">
+              <span class="node-year">2021</span>
+              <span class="node-status-tag">Advancement</span>
+            </div>
+            <h3 class="node-title">Non-Ablative Photonic Integration</h3>
+            <p class="node-text">
+              Integration of sub-millisecond fractional Erbium laser arrays, synchronizing thermal bio-stimulation with topical copper tripeptide infusions for zero-downtime remodeling.
+            </p>
+            <div class="node-achievement">
+              <i class="fa-solid fa-bolt-lightning"></i>
+              <span>Published Dermal Optical Coherence Study</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Node 3: 2024 Multi-Spectral Diagnostics -->
+        <article class="timeline-node" data-year="2024">
+          <div class="node-marker">
+            <span class="marker-core"></span>
+            <span class="marker-pulse"></span>
+          </div>
+          <div class="node-card">
+            <div class="node-meta">
+              <span class="node-year">2024</span>
+              <span class="node-status-tag">Diagnostic Matrix</span>
+            </div>
+            <h3 class="node-title">Cross-Polarized Optical Diagnostic Suite</h3>
+            <p class="node-text">
+              Deployment of real-time sub-surface imaging. Clinical patients receive quantitative baseline scans of sebaceous canal congestion and latent melanin pooling prior to treatment.
+            </p>
+            <div class="node-achievement">
+              <i class="fa-solid fa-microscope"></i>
+              <span>ISO 9001 & ISO 22716 Cleanroom Verification</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Node 4: 2026 Future Dermal Science -->
+        <article class="timeline-node" data-year="2026">
+          <div class="node-marker">
+            <span class="marker-core"></span>
+            <span class="marker-pulse"></span>
+          </div>
+          <div class="node-card">
+            <div class="node-meta">
+              <span class="node-year">2026</span>
+              <span class="node-status-tag highlight-tag">Present Scale</span>
+            </div>
+            <h3 class="node-title">Biomimetic Polynucleotide Engineering</h3>
+            <p class="node-text">
+              Expansion into high-purity PDRN bio-stimulators and customized molecular compounding, serving over 14,000 documented patient journeys with an evidence-first philosophy.
+            </p>
+            <div class="node-achievement">
+              <i class="fa-solid fa-award"></i>
+              <span>Lead National Dermatology Innovation Center</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Retro-Futurism & Vaporwave Innovation Lab Section -->
+<section class="about-vapor-section" id="quantumLab">
+  <!-- Perspective Retro Cyber Grid Horizon -->
+  <div class="vapor-sky-wireframe" aria-hidden="true">
+    <div class="vapor-gradient-sun"></div>
+    <div class="vapor-vector-grid"></div>
+    <div class="vapor-laser-horizon"></div>
+  </div>
+
+  <div class="about-vapor-container">
+    
+    <!-- Section Header -->
+    <div class="about-vapor-header">
+      <div class="pill-badge retro-pill">
+        <span class="badge-dot retro-dot"></span>
+        <span class="badge-text">Bio-Photonics Division &bull; SYS_VER 4.2</span>
+      </div>
+      <h2 class="about-vapor-title">
+        The Future of Dermal Logic. <br>
+        <span class="retro-neon-glow">Synthesized in 1980s Precision.</span>
+      </h2>
+      <p class="about-vapor-desc">
+        Inside our quantum research wing, historical analog light wavelengths converge with computational biology. We synthesize restorative electromagnetic spectra to jumpstart depleted cellular respiration.
+      </p>
+    </div>
+
+    <!-- Retro-Futuristic Terminal Display & Pods -->
+    <div class="vapor-console-layout">
+      
+      <!-- Left Column: CRT Oscilloscope Terminal Card -->
+      <div class="crt-terminal-card">
+        <div class="terminal-bezel-top">
+          <div class="bezel-leds">
+            <span class="led green"></span>
+            <span class="led amber"></span>
+            <span class="led pink"></span>
+          </div>
+          <span class="bezel-title">CRT_OSCILLO // DERMAL_CELL_SPECTRA</span>
+          <span class="bezel-freq">CH-1: 670nm</span>
+        </div>
+
+        <div class="crt-screen-inner">
+          <div class="crt-scanline"></div>
+          
+          <!-- Terminal Readout Header -->
+          <div class="terminal-text-block">
+            <p class="console-prompt">&gt; INITIATING_QUANTUM_CELLULAR_SWEEP...</p>
+            <p class="console-status">&gt; ADENOSINE TRIPHOSPHATE (ATP) SYNTHESIS: <span class="highlight-cyan">OPTIMAL</span></p>
+          </div>
+
+          <!-- Synthetic Soundwave Display -->
+          <div class="crt-wave-stage">
+            <div class="crt-wave-line wave-primary"></div>
+            <div class="crt-wave-line wave-secondary"></div>
+            <div class="crt-wave-dots">
+              <span class="ping-dot" style="left: 20%; top: 40%;"></span>
+              <span class="ping-dot" style="left: 55%; top: 65%;"></span>
+              <span class="ping-dot" style="left: 82%; top: 30%;"></span>
+            </div>
+          </div>
+
+          <!-- Live Metrics Matrix -->
+          <div class="crt-data-grid">
+            <div class="crt-datum">
+              <span class="d-label">PHOTON FLUX</span>
+              <span class="d-value">4.82 J/cm²</span>
+            </div>
+            <div class="crt-datum">
+              <span class="d-label">RESONANCE</span>
+              <span class="d-value">840 THz</span>
+            </div>
+            <div class="crt-datum">
+              <span class="d-label">MEMBRANE V</span>
+              <span class="d-value">-70 mV</span>
+            </div>
+            <div class="crt-datum">
+              <span class="d-label">CYTOCHROME C</span>
+              <span class="d-value">+310%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal-bezel-bottom">
+          <span class="terminal-id">ID: AUR-SYNTH-9941</span>
+          <span class="terminal-iso">ISO/IEC 17025 ACCREDITED</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Retro-Futuristic Innovation Pillars -->
+      <div class="vapor-features-stack">
+        
+        <!-- Feature Pod 1 -->
+        <article class="vapor-feature-pod">
+          <div class="pod-num-tag">MODULE // 01</div>
+          <div class="pod-inner-content">
+            <div class="pod-icon-box">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="pod-copy">
+              <h3 class="pod-name">Algorithmic Mantle Simulation</h3>
+              <p class="pod-text">
+                Computational models of lipid oxidation predict barrier vulnerability 90 days before transepidermal loss becomes visible to standard magnifying lamps.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature Pod 2 -->
+        <article class="vapor-feature-pod active-pod">
+          <div class="pod-num-tag neon-copper">MODULE // 02</div>
+          <div class="pod-inner-content">
+            <div class="pod-icon-box copper-box">
+              <i class="fa-solid fa-atom"></i>
+            </div>
+            <div class="pod-copy">
+              <h3 class="pod-name">Harmonic Laser Stabilization</h3>
+              <p class="pod-text">
+                Pulse-width frequencies locked to nanosecond pulse trains eliminate hot-spot thermal coagulation, preserving structural skin cells undamaged.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature Pod 3 -->
+        <article class="vapor-feature-pod">
+          <div class="pod-num-tag">MODULE // 03</div>
+          <div class="pod-inner-content">
+            <div class="pod-icon-box">
+              <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            <div class="pod-copy">
+              <h3 class="pod-name">Cryogenic Bio-Preservation</h3>
+              <p class="pod-text">
+                Peptides, polynucleotides, and growth factor matrices are frozen under sterile liquid nitrogen vapor at -196°C to prevent biological degradation.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- Vaporwave Sub-Ticker -->
+    <div class="vapor-sub-ticker">
+      <div class="ticker-signal">
+        <i class="fa-solid fa-wave-square"></i>
+        <span>ANALOG PHOTONIC HARMONICS</span>
+      </div>
+      <div class="ticker-divider"></div>
+      <div class="ticker-signal">
+        <i class="fa-solid fa-cube"></i>
+        <span>NON-IONIZING QUANTUM TARGETING</span>
+      </div>
+      <div class="ticker-divider"></div>
+      <div class="ticker-signal">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>RESTRICTED BIOMEDICAL RESEARCH</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Tabs Matrix / Segmented Control Section -->
+<section class="tabs-matrix-section" id="standards">
+  <div class="matrix-ctrl-container">
+    
+    <!-- Section Header -->
+    <div class="matrix-ctrl-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Clinical Governance Matrix</span>
+      </div>
+      <h2 class="matrix-ctrl-title">
+        The Four Pillars of <span class="highlight-italic">Dermal Integrity.</span>
+      </h2>
+      <p class="matrix-ctrl-desc">
+        Navigate our four clinical pillars. Each department adheres to standardized microbiological controls, documented bio-compatibility metrics, and strict procedural ethics.
+      </p>
+
+      <!-- Segmented Control Pill Bar -->
+      <div class="segmented-control-bar" role="tablist" aria-label="Clinical Disciplines">
+        <div class="segmented-indicator" id="segmentIndicator"></div>
+        <button type="button" class="segment-btn active" role="tab" aria-selected="true" aria-controls="panel-purity" data-index="0" id="tab-purity">
+          <i class="fa-solid fa-flask-vial"></i>
+          <span>Cellular Purity</span>
+        </button>
+        <button type="button" class="segment-btn" role="tab" aria-selected="false" aria-controls="panel-safety" data-index="1" id="tab-safety">
+          <i class="fa-solid fa-shield-virus"></i>
+          <span>Aseptic Safety</span>
+        </button>
+        <button type="button" class="segment-btn" role="tab" aria-selected="false" aria-controls="panel-imaging" data-index="2" id="tab-imaging">
+          <i class="fa-solid fa-microscope"></i>
+          <span>Dermal Optics</span>
+        </button>
+        <button type="button" class="segment-btn" role="tab" aria-selected="false" aria-controls="panel-ethics" data-index="3" id="tab-ethics">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>Physician Ethics</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Panels Stage -->
+    <div class="matrix-panels-wrapper">
+      
+      <!-- Panel 1: Cellular Purity (Active) -->
+      <div class="matrix-panel active" id="panel-purity" role="tabpanel" aria-labelledby="tab-purity">
+        <div class="panel-layout">
+          <div class="panel-info-col">
+            <span class="pillar-serial">PILLAR 01 // BIO-COMPATIBILITY</span>
+            <h3 class="panel-heading">Liposomal & Cold-Chain Formulation Standard</h3>
+            <p class="panel-summary">
+              Every therapeutic suspension applied within our treatment suites is cold-compounded at 4°C in small clinical batches. We exclude synthetic emulsifiers, parabens, denatured alcohols, and comedogenic binders that compromise moisture mantle integrity.
+            </p>
+            <div class="panel-specs-grid">
+              <div class="spec-card">
+                <span class="spec-digit">100%</span>
+                <span class="spec-desc">Bio-identical lipid precursors</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">pH 5.4</span>
+                <span class="spec-desc">Iso-electric mantle target</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">0.0%</span>
+                <span class="spec-desc">Synthetic fragrances & fillers</span>
+              </div>
+            </div>
+            <div class="panel-action">
+              <a href="#prescription" class="btn btn-primary panel-cta-btn">
+                <span>View Formulary Standards</span>
+                <i class="fa-solid fa-arrow-right btn-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-media-col">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Laboratory compounding of sterile skincare actives" loading="lazy">
+              <div class="media-stat-pill">
+                <i class="fa-solid fa-check-double"></i>
+                <span>HPLC Chromatography Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Aseptic Safety -->
+      <div class="matrix-panel" id="panel-safety" role="tabpanel" aria-labelledby="tab-safety">
+        <div class="panel-layout">
+          <div class="panel-info-col">
+            <span class="pillar-serial">PILLAR 02 // STERILITY ARCHITECTURE</span>
+            <h3 class="panel-heading">ISO Class 6 Cleanroom Micro-Isolation</h3>
+            <p class="panel-summary">
+              Patient suites operate under positive HEPA laminar airflows preventing particulate contamination. All transdermal tools undergo autoclave steam sterilization and hospital-grade gamma irradiation before micro-channeling.
+            </p>
+            <div class="panel-specs-grid">
+              <div class="spec-card">
+                <span class="spec-digit">ISO 6</span>
+                <span class="spec-desc">Cleanroom particle air filtration</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">Single-Use</span>
+                <span class="spec-desc">Disposable titanium micro-tips</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">Zero-Pathogen</span>
+                <span class="spec-desc">Medical autoclaved instruments</span>
+              </div>
+            </div>
+            <div class="panel-action">
+              <a href="#prescription" class="btn btn-primary panel-cta-btn">
+                <span>Inspect Cleanroom Protocols</span>
+                <i class="fa-solid fa-arrow-right btn-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-media-col">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Hospital cleanroom sterile procedural environment" loading="lazy">
+              <div class="media-stat-pill">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Hospital Grade Sterilization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Dermal Optics -->
+      <div class="matrix-panel" id="panel-imaging" role="tabpanel" aria-labelledby="tab-imaging">
+        <div class="panel-layout">
+          <div class="panel-info-col">
+            <span class="pillar-serial">PILLAR 03 // QUANTITATIVE DIAGNOSTICS</span>
+            <h3 class="panel-heading">Multi-Spectral Polarized Optical Imaging</h3>
+            <p class="panel-summary">
+              We never perform treatments blindly. Multi-spectral optical coherence and UV-polarized scanning map sub-surface inflammation, dermal thickness, and microvascular looping to create objective benchmarks before therapy begins.
+            </p>
+            <div class="panel-specs-grid">
+              <div class="spec-card">
+                <span class="spec-digit">4 Spectrum</span>
+                <span class="spec-desc">Polarized, UV, RGB & Infrared</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">2.8 mm</span>
+                <span class="spec-desc">Sub-surface scanning resolution</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">100%</span>
+                <span class="spec-desc">Objective quantitative metrics</span>
+              </div>
+            </div>
+            <div class="panel-action">
+              <a href="#prescription" class="btn btn-primary panel-cta-btn">
+                <span>Review Optical Diagnostic Tech</span>
+                <i class="fa-solid fa-arrow-right btn-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-media-col">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Dermatological clinical scanner interface" loading="lazy">
+              <div class="media-stat-pill">
+                <i class="fa-solid fa-eye"></i>
+                <span>High-Resolution Melanin Mapping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Physician Ethics -->
+      <div class="matrix-panel" id="panel-ethics" role="tabpanel" aria-labelledby="tab-ethics">
+        <div class="panel-layout">
+          <div class="panel-info-col">
+            <span class="pillar-serial">PILLAR 04 // PATIENT-FIRST PRINCIPLE</span>
+            <h3 class="panel-heading">Evidence-Based Treatment Restraint</h3>
+            <p class="panel-summary">
+              We practice non-invasive clinical restraint. If a patient presents with an impaired stratum corneum, all ablative and aggressive therapies are postponed until cellular barrier homeostasis is fully restored through physiological lipid therapy.
+            </p>
+            <div class="panel-specs-grid">
+              <div class="spec-card">
+                <span class="spec-digit">Board-Only</span>
+                <span class="spec-desc">MD dermatologists exclusively</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">Zero-Hype</span>
+                <span class="spec-desc">Peer-reviewed clinical evidence</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-digit">HIPAA</span>
+                <span class="spec-desc">Encrypted clinical records</span>
+              </div>
+            </div>
+            <div class="panel-action">
+              <a href="#prescription" class="btn btn-primary panel-cta-btn">
+                <span>Meet Our Attending MDs</span>
+                <i class="fa-solid fa-arrow-right btn-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-media-col">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80" alt="Dermatologist consultation in clinical office" loading="lazy">
+              <div class="media-stat-pill">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span>Physician Oath Compliant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Compliance Strip -->
+    <div class="compliance-footer-bar">
+      <div class="comp-item">
+        <i class="fa-solid fa-certificate"></i>
+        <span>ISO 9001:2015 Quality Management Certified</span>
+      </div>
+      <div class="comp-divider"></div>
+      <div class="comp-item">
+        <i class="fa-solid fa-building-shield"></i>
+        <span>Clinical Establishment License #MED-2018-9410</span>
+      </div>
+      <div class="comp-divider"></div>
+      <div class="comp-item">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Cruelty-Free Laboratory Validation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Final About Page CTA & Intake Concierge Section -->
+<section class="about-final-cta-section" id="booking">
+  <div class="cta-intake-container">
+    
+    <!-- Ambient Background Glows -->
+    <div class="cta-glow-sphere glow-left" aria-hidden="true"></div>
+    <div class="cta-glow-sphere glow-right" aria-hidden="true"></div>
+
+    <div class="cta-intake-card">
+      <div class="cta-intake-grid">
+        
+        <!-- Left Column: Editorial Trust & Direct Contact -->
+        <div class="cta-intake-info">
+          <div class="pill-badge cta-pill">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Direct Physician Admissions</span>
+          </div>
+
+          <h2 class="cta-intake-title">
+            Consult Directly with Our <span class="highlight-italic">Attending Dermatologists.</span>
+          </h2>
+
+          <p class="cta-intake-desc">
+            Skip trial-and-error beauty regimens. Every patient intake begins with cross-polarized dermal imaging, direct review by our founding medical board, and compounding calibrated to your lipid mantle.
+          </p>
+
+          <!-- Clinic Highlights Checklist -->
+          <ul class="cta-checklist">
+            <li>
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              <span>45-minute physician-conducted diagnostic intake</span>
+            </li>
+            <li>
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              <span>Customized barrier repair compounding prescription</span>
+            </li>
+            <li>
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              <span>Zero-obligation treatment protocol review</span>
+            </li>
+          </ul>
+
+          <!-- Clinic Care Hotline -->
+          <div class="cta-direct-hotline">
+            <span class="hotline-label">Direct Clinical Triage Desk:</span>
+            <a href="tel:+919876543210" class="hotline-link">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 98765 43210</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Consultation Booking Card -->
+        <div class="cta-intake-form-col">
+          <div class="intake-form-card">
+            <div class="form-card-head">
+              <h3 class="form-card-title">Schedule Initial Diagnostic</h3>
+              <span class="form-card-sub">Responses delivered within 2 clinical hours</span>
+            </div>
+
+            <form class="custom-intake-form" id="aboutBookingForm" novalidate>
+              
+              <!-- 1. Full Name Input (Only Alphabets) -->
+              <div class="form-group" id="nameGroup">
+                <label for="intakeName">Patient Full Name</label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-user"></i>
+                  <input 
+                    type="text" 
+                    id="intakeName" 
+                    placeholder="Enter full name" 
+                    autocomplete="off"
+                    required
+                  >
+                </div>
+                <span class="field-error" id="nameError">Name must contain only alphabetic letters and spaces.</span>
+              </div>
+
+              <!-- 2. Mobile Number Input (Only Numbers, Exactly 10 Digits) -->
+              <div class="form-group" id="phoneGroup">
+                <label for="intakePhone">Mobile Contact Number</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  <input 
+                    type="tel" 
+                    id="intakePhone" 
+                    placeholder="Enter 10-digit mobile number" 
+                    maxlength="10"
+                    autocomplete="off"
+                    required
+                  >
+                </div>
+                <span class="field-error" id="phoneError">Please enter a valid 10-digit mobile number.</span>
+              </div>
+
+              <!-- 3. Custom Method Dropdown (Replaces native <select>) -->
+              <div class="form-group" id="focusGroup">
+                <label id="focusLabel">Primary Consultation Target</label>
+                <div class="custom-dropdown" id="intakeCustomDropdown">
+                  <button 
+                    type="button" 
+                    class="dropdown-trigger" 
+                    id="intakeDropdownTrigger" 
+                    aria-haspopup="listbox" 
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-microscope select-icon"></i>
+                    <span class="selected-text" id="intakeSelectedText">Select Consultation Focus</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                  </button>
+
+                  <ul class="dropdown-menu" id="intakeDropdownMenu" role="listbox" tabindex="-1">
+                    <li class="dropdown-item" role="option" data-value="treatments.html">
+                      <i class="fa-solid fa-layer-group"></i>
+                      <span>Complete Formulary & Treatments</span>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="specialists.html">
+                      <i class="fa-solid fa-user-doctor"></i>
+                      <span>Consult Lead Dermatologist</span>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="reviews.html">
+                      <i class="fa-solid fa-square-poll-vertical"></i>
+                      <span>Documented Clinical Outcomes</span>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="diagnostics.html">
+                      <i class="fa-solid fa-dna"></i>
+                      <span>Multi-Spectral Dermal Scanning</span>
+                    </li>
+                  </ul>
+
+                  <!-- Hidden Input Storing Selected Route -->
+                  <input type="hidden" id="selectedIntakeTarget" name="selectedIntakeTarget" value="">
+                </div>
+                <span class="field-error" id="focusError">Please select a primary consultation target.</span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary cta-submit-btn" id="intakeSubmitBtn">
+                <span>Confirm Clinical Intake</span>
+                <i class="fa-solid fa-arrow-right btn-icon"></i>
+              </button>
+
+              <p class="intake-privacy-note">
+                <i class="fa-solid fa-lock"></i>
+                <span>Confidential diagnostic record under medical compliance.</span>
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Site Footer -->
+<footer class="site-footer" id="siteFooter">
+  <div class="footer-container">
+    <!-- Top Grid Layout -->
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Clinical Statement -->
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo" aria-label="Aura Skincare Clinic">
+          <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+        </a>
+        <p class="brand-desc">
+          Evidence-based dermatological therapies and customized skin health regimens guided by licensed practitioners.
+        </p>
+        <div class="social-links" aria-label="Social Media">
+          <a href="error.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="error.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="error.html" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="error.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links (Synced with Scrollspy) -->
+      <div class="footer-col">
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link active">Home</a></li>
+          <li><a href="treatments.html" class="footer-link">Treatments</a></li>
+          <li><a href="about.html" class="footer-link">About Clinic</a></li>
+          <li><a href="specialists.html" class="footer-link">Dermatologists</a></li>
+          <li><a href="reviews.html" class="footer-link">Results</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Key Treatments -->
+      <div class="footer-col">
+        <h4 class="footer-title">Clinical Solutions</h4>
+        <ul class="footer-links static-links">
+          <li><a href="#treatments">Laser Skin Resurfacing</a></li>
+          <li><a href="#treatments">Chemical Peels & Glycolic</a></li>
+          <li><a href="#treatments">Targeted Acne Extraction</a></li>
+          <li><a href="#treatments">Dermal Barrier Infusions</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Clinic Info & Hours -->
+      <div class="footer-col">
+        <h4 class="footer-title">Clinic Hours</h4>
+        <ul class="schedule-list">
+          <li>
+            <span class="schedule-day">Mon - Fri:</span>
+            <span class="schedule-time">09:00 AM - 07:00 PM</span>
+          </li>
+          <li>
+            <span class="schedule-day">Saturday:</span>
+            <span class="schedule-time">10:00 AM - 05:00 PM</span>
+          </li>
+          <li>
+            <span class="schedule-day">Sunday:</span>
+            <span class="schedule-status">By Prior Appointment</span>
+          </li>
+        </ul>
+        <div class="footer-badge">
+          <i class="fa-solid fa-certificate"></i>
+          <span>ISO 9001 Certified Dermatology Unit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        &copy; 2026 Aura Skincare Clinic. All rights reserved.
+      </p>
+      <div class="legal-links">
+        <a href="error.html">Privacy Policy</a>
+        <span class="divider">&bull;</span>
+        <a href="error.html">Terms of Care</a>
+        <span class="divider">&bull;</span>
+        <a href="error.html">Medical Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+ <!-- GSAP & ScrollTrigger Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+        <script src="about.js"></script>
+    
+</body>
+</html>

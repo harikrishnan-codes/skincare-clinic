@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="./assets/logo.webp">
+  <link rel="stylesheet" href="root.css">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="specialists.css">
+
+</head>
+<body>
+
+    <!-- Site Header -->
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo" aria-label="Aura Skincare Clinic">
+      <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Primary Navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+        <li><a href="about.html" class="nav-link">About Clinic</a></li>
+        <li><a href="specialists.html" class="nav-link">Dermatologists</a></li>
+        <li><a href="reviews.html" class="nav-link">Results</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Action Button -->
+    <div class="header-actions">
+      <a href="auth.html" class="btn btn-primary header-cta">
+        <span>Sign In</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar bar-top"></span>
+        <span class="bar bar-middle"></span>
+        <span class="bar bar-bottom"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-backdrop" id="menuBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+                <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link active">Home</a></li>
+      <li><a href="treatments.html" class="mobile-link">Treatments</a></li>
+      <li><a href="about.html" class="mobile-link">About Clinic</a></li>
+      <li><a href="specialists.html" class="mobile-link">Dermatologists</a></li>
+      <li><a href="reviews.html" class="mobile-link">Results</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="auth.html" class="btn btn-primary mobile-cta">
+        <span>Sign In</span>
+      </a>
+      <p class="drawer-note">Care Hotline: +91 98765 43210</p>
+    </div>
+  </aside>
+</header>
+
+
+
+
+
+
+
+<!-- Dermatologists & Medical Faculty Hero Section -->
+<section class="specialists-hero-section" id="specialistsHero">
+  <!-- Subtle Ambient Glow Orbs -->
+  <div class="specialist-ambient-glow glow-top-left" aria-hidden="true"></div>
+  <div class="specialist-ambient-glow glow-bottom-right" aria-hidden="true"></div>
+
+  <div class="specialists-hero-container">
+    
+    <!-- Left Column: Editorial Copy, Credentials & Live Specialty Filters -->
+    <div class="specialists-hero-content">
+      
+      <!-- Breadcrumb Badge -->
+      <div class="hero-breadcrumb-badge specialists-badge">
+        <a href="index.html" class="breadcrumb-root">Home</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">Attending Dermatological Faculty</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="specialists-hero-title">
+        Board-Certified Minds. <br>
+        <span class="specialists-title-highlight">Evidence-Led Care.</span>
+      </h1>
+
+      <!-- Intro Subtitle -->
+      <p class="specialists-hero-lead">
+        Meet our multidisciplinary team of MD dermatologists, laser physicists, and compounding pharmaceutical chemists. Every consultation is conducted by certified physicians dedicated to barrier rehabilitation and zero-cellular trauma.
+      </p>
+
+      <!-- Live Specialty Quick-Filter Strip -->
+      <div class="specialty-filter-bar" role="tablist" aria-label="Faculty Specialties">
+        <button type="button" class="spec-filter-chip active" data-specialty="all">
+          <i class="fa-solid fa-users-viewfinder"></i>
+          <span>All Faculty (8)</span>
+        </button>
+        <button type="button" class="spec-filter-chip" data-specialty="laser">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          <span>Laser Surgeons</span>
+        </button>
+        <button type="button" class="spec-filter-chip" data-specialty="barrier">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Barrier Biologists</span>
+        </button>
+        <button type="button" class="spec-filter-chip" data-specialty="pigment">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+          <span>Melanocyte Experts</span>
+        </button>
+        <button type="button" class="spec-filter-chip" data-specialty="pathology">
+          <i class="fa-solid fa-microscope"></i>
+          <span>Dermatopathologists</span>
+        </button>
+      </div>
+
+      <!-- Verified Clinical Credentials Strip -->
+      <div class="specialists-trust-row">
+        <div class="spec-trust-stat">
+          <span class="trust-digit">100%</span>
+          <span class="trust-caption">Board-Certified MDs</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="spec-trust-stat">
+          <span class="trust-digit">48+</span>
+          <span class="trust-caption">Published Clinical Papers</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="spec-trust-stat">
+          <span class="trust-digit">15+</span>
+          <span class="trust-caption">Avg. Years Experience</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Medical Director Architectural Portrait Frame -->
+    <div class="specialists-hero-visual">
+      
+      <!-- Primary Architectural Frame -->
+      <div class="specialists-visual-frame">
+        <img 
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80" 
+          alt="Chief Medical Director and Board-Certified Dermatologist examining diagnostic imaging" 
+          class="specialists-hero-img"
+          loading="eager"
+        >
+        
+        <!-- Live Triage Status Overlay -->
+        <div class="specialists-status-overlay">
+          <span class="status-pulse-dot"></span>
+          <span>In-Clinic & Virtual Triages Active</span>
+        </div>
+      </div>
+
+      <!-- Floating Diagnostic Credential Card -->
+      <div class="floating-faculty-badge">
+        <div class="faculty-badge-icon">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <div class="faculty-badge-text">
+          <strong class="badge-headline">FAAD & EADV Accredited</strong>
+          <span class="badge-sub">Fellows of American & European Dermatological Academies</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Attending Faculty 3D Tilt Roster Section -->
+<section class="specialist-roster-section" id="facultyRoster">
+  <div class="roster-container">
+    
+    <!-- Section Header -->
+    <div class="roster-head">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Clinical Board Members</span>
+      </div>
+      <h2 class="roster-title">
+        Attending Physicians. <span class="highlight-italic">Dedicated Specialists.</span>
+      </h2>
+      <p class="roster-desc">
+        Hover over each specialist card to examine clinical certifications, sub-specialty research focuses, and direct consultation availability.
+      </p>
+    </div>
+
+    <!-- 3D Tilt Card Grid -->
+    <div class="tilt-roster-grid" id="facultyGrid">
+      
+      <!-- Physician Card 1: Medical Director -->
+      <article class="tilt-card" data-specialty="barrier" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="card-sheen" aria-hidden="true"></div>
+          
+          <div class="physician-media-box">
+            <img 
+              src="https://images.unsplash.com/photo-1594824813576-a24e9ec62b0e?auto=format&fit=crop&w=700&q=80" 
+              alt="Dr. Elena Vance MD" 
+              class="physician-photo"
+              loading="lazy"
+            >
+            <span class="faculty-tag lead-tag">Medical Director</span>
+            <div class="doctor-badge-float">
+              <i class="fa-solid fa-certificate"></i>
+              <span>FAAD Certified</span>
+            </div>
+          </div>
+
+          <div class="physician-info-body">
+            <div class="doctor-meta-strip">
+              <span class="doctor-exp">16 Yrs Clinical Exp</span>
+              <span class="doctor-focus-pill">Barrier Biology</span>
+            </div>
+
+            <h3 class="doctor-name">Dr. Elena Vance, MD</h3>
+            <span class="doctor-sub">Fellow of American Academy of Dermatology</span>
+            
+            <p class="doctor-bio">
+              Specializing in chronic epidermal barrier failure, rosacea modulation, and lipid replenishment protocols using bio-mimetic ceramides.
+            </p>
+
+            <div class="doctor-achieve-bar">
+              <div class="achieve-col">
+                <span class="achieve-val">4.98</span>
+                <span class="achieve-key">Patient Rating</span>
+              </div>
+              <div class="achieve-sep"></div>
+              <div class="achieve-col">
+                <span class="achieve-val">22</span>
+                <span class="achieve-key">Papers Published</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary doctor-book-btn">
+              <span>Book Consultation</span>
+              <i class="fa-solid fa-calendar-check btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Physician Card 2: Laser Surgeon -->
+      <article class="tilt-card" data-specialty="laser" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="card-sheen" aria-hidden="true"></div>
+          
+          <div class="physician-media-box">
+            <img 
+              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80" 
+              alt="Dr. Marcus Thorne MD" 
+              class="physician-photo"
+              loading="lazy"
+            >
+            <span class="faculty-tag">Laser Physicist</span>
+            <div class="doctor-badge-float">
+              <i class="fa-solid fa-award"></i>
+              <span>ASLMS Member</span>
+            </div>
+          </div>
+
+          <div class="physician-info-body">
+            <div class="doctor-meta-strip">
+              <span class="doctor-exp">12 Yrs Clinical Exp</span>
+              <span class="doctor-focus-pill">Fractional Laser</span>
+            </div>
+
+            <h3 class="doctor-name">Dr. Marcus Thorne, MD</h3>
+            <span class="doctor-sub">Board Certified Dermatologic Surgeon</span>
+            
+            <p class="doctor-bio">
+              Pioneer in non-ablative Erbium photon resurfacing and vascular telangiectasia correction with zero thermal downtime.
+            </p>
+
+            <div class="doctor-achieve-bar">
+              <div class="achieve-col">
+                <span class="achieve-val">6,200+</span>
+                <span class="achieve-key">Laser Sessions</span>
+              </div>
+              <div class="achieve-sep"></div>
+              <div class="achieve-col">
+                <span class="achieve-val">Zero</span>
+                <span class="achieve-key">PIH Incidents</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary doctor-book-btn">
+              <span>Book Consultation</span>
+              <i class="fa-solid fa-calendar-check btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Physician Card 3: Melanocyte Specialist -->
+      <article class="tilt-card" data-specialty="pigment" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="card-sheen" aria-hidden="true"></div>
+          
+          <div class="physician-media-box">
+            <img 
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" 
+              alt="Dr. Sanya Patel MD" 
+              class="physician-photo"
+              loading="lazy"
+            >
+            <span class="faculty-tag">Pigment Biologist</span>
+            <div class="doctor-badge-float">
+              <i class="fa-solid fa-certificate"></i>
+              <span>EADV Accredited</span>
+            </div>
+          </div>
+
+          <div class="physician-info-body">
+            <div class="doctor-meta-strip">
+              <span class="doctor-exp">14 Yrs Clinical Exp</span>
+              <span class="doctor-focus-pill">Dyschromia</span>
+            </div>
+
+            <h3 class="doctor-name">Dr. Sanya Patel, MD</h3>
+            <span class="doctor-sub">Specialist in Melanin & Photoprotection</span>
+            
+            <p class="doctor-bio">
+              Renowned expert in post-inflammatory hyperpigmentation, dermal melasma clearance, and cross-polarized UV diagnosis.
+            </p>
+
+            <div class="doctor-achieve-bar">
+              <div class="achieve-col">
+                <span class="achieve-val">98.4%</span>
+                <span class="achieve-key">Pigment Lift</span>
+              </div>
+              <div class="achieve-sep"></div>
+              <div class="achieve-col">
+                <span class="achieve-val">14</span>
+                <span class="achieve-key">Clinical Trials</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary doctor-book-btn">
+              <span>Book Consultation</span>
+              <i class="fa-solid fa-calendar-check btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Physician Card 4: Dermatopathologist -->
+      <article class="tilt-card" data-specialty="pathology" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="card-sheen" aria-hidden="true"></div>
+          
+          <div class="physician-media-box">
+            <img 
+              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=700&q=80" 
+              alt="Dr. Julian Ross MD" 
+              class="physician-photo"
+              loading="lazy"
+            >
+            <span class="faculty-tag">Dermatopathologist</span>
+            <div class="doctor-badge-float">
+              <i class="fa-solid fa-microscope"></i>
+              <span>Board Certified</span>
+            </div>
+          </div>
+
+          <div class="physician-info-body">
+            <div class="doctor-meta-strip">
+              <span class="doctor-exp">18 Yrs Clinical Exp</span>
+              <span class="doctor-focus-pill">Cellular Pathology</span>
+            </div>
+
+            <h3 class="doctor-name">Dr. Julian Ross, MD</h3>
+            <span class="doctor-sub">Clinical Associate Professor of Pathology</span>
+            
+            <p class="doctor-bio">
+              Focuses on cellular histological assays, sub-surface elastosis analysis, and bio-stimulative polynucleotide efficacy.
+            </p>
+
+            <div class="doctor-achieve-bar">
+              <div class="achieve-col">
+                <span class="achieve-val">100%</span>
+                <span class="achieve-key">Biopsy Precision</span>
+              </div>
+              <div class="achieve-sep"></div>
+              <div class="achieve-col">
+                <span class="achieve-val">30+</span>
+                <span class="achieve-key">Keynote Lectures</span>
+              </div>
+            </div>
+
+            <a href="error.html" class="btn btn-primary doctor-book-btn">
+              <span>Book Consultation</span>
+              <i class="fa-solid fa-calendar-check btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Triage Protocol Footnote -->
+    <div class="roster-footnote-strip">
+      <div class="fn-block">
+        <i class="fa-solid fa-user-doctor"></i>
+        <span>Strict Non-Delegated Physician Consultations</span>
+      </div>
+      <div class="fn-sep"></div>
+      <div class="fn-block">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Direct 45-Minute In-Person Baseline Examination</span>
+      </div>
+      <div class="fn-sep"></div>
+      <div class="fn-block">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Continuous Post-Care Triage Support</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Kinetic Stacking / Overlapping Cards Section -->
+<section class="kinetic-stack-section" id="consultationJourney">
+  <div class="kinetic-container">
+    
+    <!-- Section Header (Sticky side on desktop, stacked on mobile) -->
+    <div class="kinetic-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Physician Triage Protocol</span>
+      </div>
+      <h2 class="kinetic-title">
+        The 4-Step <br>
+        <span class="highlight-italic">Clinical Sequence.</span>
+      </h2>
+      <p class="kinetic-desc">
+        We eliminate guesswork. Experience our standardized, board-certified physician diagnostic intake—from sub-surface spectral imaging to custom lipid compounding.
+      </p>
+      <div class="kinetic-stat-badge">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>45 Minutes Comprehensive Baseline Evaluation</span>
+      </div>
+    </div>
+
+    <!-- Kinetic Card Deck (Cards stack and overlap upon scroll) -->
+    <div class="kinetic-cards-stack" id="kineticStack">
+      
+      <!-- Stacking Card 1 -->
+      <article class="stack-card card-step-1" data-step="1">
+        <div class="stack-card-inner">
+          <div class="stack-top-meta">
+            <span class="step-counter">STAGE // 01</span>
+            <span class="step-badge">Baseline Intake</span>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-info">
+              <h3 class="stack-card-title">Cross-Polarized Dermal Diagnostics</h3>
+              <p class="stack-card-desc">
+                Your consultation begins under calibrated UV, polarized, and non-polarized optical sensors. We map invisible sun damage, vascular erythema loops, and follicular bacterial clusters prior to touching the skin.
+              </p>
+              <ul class="stack-points">
+                <li><i class="fa-solid fa-check"></i> Multi-spectral epidermal barrier density scan</li>
+                <li><i class="fa-solid fa-check"></i> Transepidermal water loss (TEWL) capacitance test</li>
+                <li><i class="fa-solid fa-check"></i> Baseline photographic micro-mapping for clinical logs</li>
+              </ul>
+            </div>
+            <div class="stack-media">
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80" alt="Dermal diagnostic scanning session" loading="lazy">
+              <div class="media-corner-badge">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Optical Scan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stacking Card 2 -->
+      <article class="stack-card card-step-2" data-step="2">
+        <div class="stack-card-inner">
+          <div class="stack-top-meta">
+            <span class="step-counter">STAGE // 02</span>
+            <span class="step-badge highlight">MD Evaluation</span>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-info">
+              <h3 class="stack-card-title">Direct Board Dermatologist Triage</h3>
+              <p class="stack-card-desc">
+                Review your high-resolution dermal scans face-to-face with an attending board-certified physician. We analyze past product sensitivities, hormonal markers, and cellular repair capacity without commercial bias.
+              </p>
+              <ul class="stack-points">
+                <li><i class="fa-solid fa-check"></i> Differential diagnosis of rosacea, acne, or dyschromia</li>
+                <li><i class="fa-solid fa-check"></i> Review of contraindicated clinical procedures</li>
+                <li><i class="fa-solid fa-check"></i> Clarification of expected cellular healing timeline</li>
+              </ul>
+            </div>
+            <div class="stack-media">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=700&q=80" alt="Attending physician reviewing clinical scans with patient" loading="lazy">
+              <div class="media-corner-badge">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span>MD Triage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stacking Card 3 -->
+      <article class="stack-card card-step-3" data-step="3">
+        <div class="stack-card-inner">
+          <div class="stack-top-meta">
+            <span class="step-counter">STAGE // 03</span>
+            <span class="step-badge">Lab Synthesis</span>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-info">
+              <h3 class="stack-card-title">Bespoke Compounding & Active Prescriptions</h3>
+              <p class="stack-card-desc">
+                Our compounding pharmacist synthesizes your bespoke topical suspensions under nitrogen isolation, balancing pure phytoceramides, non-denatured peptides, and cold-buffered bio-stimulators.
+              </p>
+              <ul class="stack-points">
+                <li><i class="fa-solid fa-check"></i> Micro-batch compounding with physiological pH 5.4 lock</li>
+                <li><i class="fa-solid fa-check"></i> Exclusion of synthetic fragrances and pore-blocking waxes</li>
+                <li><i class="fa-solid fa-check"></i> Custom concentration tailored to cellular sensitivity</li>
+              </ul>
+            </div>
+            <div class="stack-media">
+              <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=700&q=80" alt="Sterile clinical compounding of bespoke skincare actives" loading="lazy">
+              <div class="media-corner-badge">
+                <i class="fa-solid fa-flask-vial"></i>
+                <span>Compounding</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stacking Card 4 -->
+      <article class="stack-card card-step-4" data-step="4">
+        <div class="stack-card-inner">
+          <div class="stack-top-meta">
+            <span class="step-counter">STAGE // 04</span>
+            <span class="step-badge">Therapy Lock</span>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-info">
+              <h3 class="stack-card-title">In-Clinic Procedure & Continuous Follow-Up</h3>
+              <p class="stack-card-desc">
+                Proceed directly to your physician-administered laser session or bio-infusion. Following treatment, you are issued 24/7 post-procedure clinical support and scheduled for re-scans every 30 days.
+              </p>
+              <ul class="stack-points">
+                <li><i class="fa-solid fa-check"></i> Zero-downtime, fractional wavelength laser execution</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated clinical concierge follow-up hotline</li>
+                <li><i class="fa-solid fa-check"></i> Re-diagnostic comparative progress photography</li>
+              </ul>
+            </div>
+            <div class="stack-media">
+              <img src="https://images.unsplash.com/photo-1512290900672-1f5518b6e680?auto=format&fit=crop&w=700&q=80" alt="Clinical facial procedure under sterile laboratory protocol" loading="lazy">
+              <div class="media-corner-badge">
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>Follow-Up Care</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Tabs Matrix / Specialist Tier & Schedule Control -->
+<section class="specialist-matrix-section" id="triageMatrix">
+  <div class="matrix-container">
+    
+    <!-- Section Header -->
+    <div class="matrix-head">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Clinical Consultation Tiers</span>
+      </div>
+      <h2 class="matrix-title">
+        Specialist Admissions & <span class="highlight-italic">Scheduling Matrix.</span>
+      </h2>
+      <p class="matrix-desc">
+        Select a consultation pathway below. Each consultation tier is administered directly by accredited dermatological faculty with strict protocol duration and diagnostic imaging allocations.
+      </p>
+
+      <!-- Segmented Control Bar -->
+      <div class="specialist-segmented-bar" role="tablist" aria-label="Specialist Consultation Tiers">
+        <div class="tier-slider-pill" id="tierSliderPill"></div>
+        <button type="button" class="tier-segment-btn active" role="tab" aria-selected="true" aria-controls="tier-baseline" data-index="0" id="tab-baseline">
+          <i class="fa-solid fa-microscope"></i>
+          <span>Diagnostic Intake</span>
+        </button>
+        <button type="button" class="tier-segment-btn" role="tab" aria-selected="false" aria-controls="tier-laser" data-index="1" id="tab-laser">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          <span>Laser Sub-Specialty</span>
+        </button>
+        <button type="button" class="tier-segment-btn" role="tab" aria-selected="false" aria-controls="tier-compounding" data-index="2" id="tab-compounding">
+          <i class="fa-solid fa-flask-vial"></i>
+          <span>Compounding Lab</span>
+        </button>
+        <button type="button" class="tier-segment-btn" role="tab" aria-selected="false" aria-controls="tier-director" data-index="3" id="tab-director">
+          <i class="fa-solid fa-award"></i>
+          <span>Medical Director</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Panels Stage -->
+    <div class="matrix-tier-panels">
+      
+      <!-- Tier 1: Diagnostic Intake (Active) -->
+      <div class="tier-panel active" id="tier-baseline" role="tabpanel" aria-labelledby="tab-baseline">
+        <div class="tier-card-grid">
+          
+          <div class="tier-summary-card">
+            <span class="tier-code">TIER 01 // FOUNDATIONAL TRIAGE</span>
+            <h3 class="tier-name">Baseline Multi-Spectral Intake</h3>
+            <p class="tier-summary-text">
+              Recommended for all initial patients presenting with barrier fragility, persistent erythema, adult acne, or unverified sensitivities.
+            </p>
+            
+            <div class="tier-key-metrics">
+              <div class="tier-metric">
+                <span class="m-val">45 Mins</span>
+                <span class="m-lbl">Session Length</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">100%</span>
+                <span class="m-lbl">MD Attended</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">2 Scans</span>
+                <span class="m-lbl">UV & Polarized</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary tier-cta-btn">
+              <span>Book Baseline Intake</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+
+          <div class="tier-details-card">
+            <h4 class="details-heading">Clinical Scope & Deliverables</h4>
+            <ul class="tier-deliverables">
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Quantitative Sebum & Hydration Analysis:</strong>
+                  <span>Capacitance-based epidermal moisture verification mapped against age-matched controls.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Complete Cosmetic Formulary Audit:</strong>
+                  <span>Full ingredient toxicology review of your current daily home skincare products.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Physiological Prescriptive Roadmap:</strong>
+                  <span>Issuance of immediate barrier-locking topical suspension formulas and dietary guidance.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="tier-roster-status">
+              <span class="status-live-dot"></span>
+              <span>Slots Available Today &bull; Dr. Sanya Patel, MD &amp; Dr. Julian Ross, MD</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tier 2: Laser Sub-Specialty -->
+      <div class="tier-panel" id="tier-laser" role="tabpanel" aria-labelledby="tab-laser">
+        <div class="tier-card-grid">
+          
+          <div class="tier-summary-card">
+            <span class="tier-code">TIER 02 // PHOTON SURGERY</span>
+            <h3 class="tier-name">Fractional Laser Assessment</h3>
+            <p class="tier-summary-text">
+              Conducted exclusively by certified laser physicists and dermatologic surgeons for scar remodeling, vascular telangiectasias, and photon stimulation.
+            </p>
+            
+            <div class="tier-key-metrics">
+              <div class="tier-metric">
+                <span class="m-val">60 Mins</span>
+                <span class="m-lbl">Session Length</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">Erbium</span>
+                <span class="m-lbl">Resurfacing</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">0 Downtime</span>
+                <span class="m-lbl">Target Protocol</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary tier-cta-btn">
+              <span>Book Laser Consultation</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+
+          <div class="tier-details-card">
+            <h4 class="details-heading">Clinical Scope & Deliverables</h4>
+            <ul class="tier-deliverables">
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Test Spot Threshold Calibration:</strong>
+                  <span>Pre-procedural laser fluence safety test ensuring zero post-inflammatory hyperpigmentation.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Sub-surface Collagen Scaffolding Evaluation:</strong>
+                  <span>High-resolution ultrasound imaging measuring reticular dermal density and fiber elasticity.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Sterile Pre-Thermal Formulation:</strong>
+                  <span>Pre-cooling biomimetic ceramide compress applied directly prior to laser activation.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="tier-roster-status">
+              <span class="status-live-dot"></span>
+              <span>Next Available: Tomorrow &bull; Dr. Marcus Thorne, MD (ASLMS Member)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tier 3: Compounding Lab -->
+      <div class="tier-panel" id="tier-compounding" role="tabpanel" aria-labelledby="tab-compounding">
+        <div class="tier-card-grid">
+          
+          <div class="tier-summary-card">
+            <span class="tier-code">TIER 03 // MOLECULAR PHARMACY</span>
+            <h3 class="tier-name">Bespoke Compounding Consultation</h3>
+            <p class="tier-summary-text">
+              Collaborative intake with our compounding pharmaceutical chemists to formulate tailor-made topical solutions calibrated to personal cellular tolerance.
+            </p>
+            
+            <div class="tier-key-metrics">
+              <div class="tier-metric">
+                <span class="m-val">40 Mins</span>
+                <span class="m-lbl">Session Length</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">pH 5.4</span>
+                <span class="m-lbl">Equilibrium</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">4°C</span>
+                <span class="m-lbl">Cold-Chain</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary tier-cta-btn">
+              <span>Book Compounding Intake</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+
+          <div class="tier-details-card">
+            <h4 class="details-heading">Clinical Scope & Deliverables</h4>
+            <ul class="tier-deliverables">
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Lipid Mantle Fatty Acid Sequencing:</strong>
+                  <span>Determination of linoleic vs. oleic ratios required for optimal epidermal barrier repair.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Nitrogen-Purged Batch Synthesis:</strong>
+                  <span>Single-patient sterile compounding free of parabens, drying alcohols, and endocrine disruptors.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Bi-Weekly Active Refill Calibration:</strong>
+                  <span>Scheduled potency escalations based on monitored clinical re-scan outcomes.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="tier-roster-status">
+              <span class="status-live-dot"></span>
+              <span>Available Daily &bull; Dr. Julian Ross, MD &amp; Senior Pharmacist</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tier 4: Medical Director -->
+      <div class="tier-panel" id="tier-director" role="tabpanel" aria-labelledby="tab-director">
+        <div class="tier-card-grid">
+          
+          <div class="tier-summary-card">
+            <span class="tier-code">TIER 04 // EXECUTIVE MEDICINE</span>
+            <h3 class="tier-name">Chief Medical Director Intake</h3>
+            <p class="tier-summary-text">
+              Direct primary evaluation by Dr. Elena Vance, MD, FAAD. Designed for chronic unresponsive dermatoses, systemic barrier crises, and long-term dermal rehabilitation.
+            </p>
+            
+            <div class="tier-key-metrics">
+              <div class="tier-metric">
+                <span class="m-val">75 Mins</span>
+                <span class="m-lbl">Session Length</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">FAAD</span>
+                <span class="m-lbl">Direct Review</span>
+              </div>
+              <div class="tier-m-sep"></div>
+              <div class="tier-metric">
+                <span class="m-val">Full Panel</span>
+                <span class="m-lbl">4-Scan Suite</span>
+              </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary tier-cta-btn">
+              <span>Request Medical Director Slot</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+
+          <div class="tier-details-card">
+            <h4 class="details-heading">Clinical Scope & Deliverables</h4>
+            <ul class="tier-deliverables">
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Exhaustive Cutaneous Histology Review:</strong>
+                  <span>Detailed breakdown of past biopsies, allergic patch tests, and recalcitrant symptoms.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Polynucleotide (PDRN) Bio-Stimulation Mapping:</strong>
+                  <span>Cellular regenerative blueprint utilizing marine bio-active peptide complexes.</span>
+                </div>
+              </li>
+              <li>
+                <div class="deliv-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Personalized 24/7 Concierge Hotline:</strong>
+                  <span>Direct triage channel with attending medical fellows throughout recovery cycles.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="tier-roster-status">
+              <span class="status-live-dot"></span>
+              <span>Limited Availability (2 Slots / Week) &bull; Dr. Elena Vance, MD, FAAD</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Governance Bar -->
+    <div class="tier-governance-strip">
+      <div class="gov-col">
+        <i class="fa-solid fa-shield-virus"></i>
+        <span>No Nurse Injectors or Delegated Consultations</span>
+      </div>
+      <div class="gov-sep"></div>
+      <div class="gov-col">
+        <i class="fa-solid fa-file-contract"></i>
+        <span>Clear Written Protocols &amp; Informed Consent</span>
+      </div>
+      <div class="gov-sep"></div>
+      <div class="gov-col">
+        <i class="fa-solid fa-hospital-user"></i>
+        <span>Strict Clinical Triage Integrity</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Final Section: Direct Physician Triage & Appointment Admissions -->
+<section class="specialist-final-cta-section" id="booking">
+  <div class="specialist-intake-container">
+    
+    <!-- Ambient Background Glow Spheres -->
+    <div class="cta-glow-sphere glow-left" aria-hidden="true"></div>
+    <div class="cta-glow-sphere glow-right" aria-hidden="true"></div>
+
+    <div class="specialist-intake-card">
+      <div class="specialist-intake-grid">
+        
+        <!-- Left Column: Editorial Trust & Direct Faculty Line -->
+        <div class="specialist-intake-info">
+          <div class="pill-badge cta-pill">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Physician Admissions Active</span>
+          </div>
+
+          <h2 class="specialist-intake-title">
+            Reserve a Direct Intake with <span class="highlight-italic">Attending Faculty.</span>
+          </h2>
+
+          <p class="specialist-intake-desc">
+            Directly connect with our board-certified dermatologists. Your consultation is paired with multi-spectral polarized scans, tailored lipid compounding prescriptions, and zero commercial protocol bias.
+          </p>
+
+          <!-- Accreditation Checklist -->
+          <ul class="specialist-cta-checklist">
+            <li>
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              <span>45-minute physician diagnostic evaluation</span>
+            </li>
+            <li>
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              <span>Formulary review and barrier lipid tolerance test</span>
+            </li>
+            <li>
+              <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+              <span>Direct follow-up with attending medical fellows</span>
+            </li>
+          </ul>
+
+          <!-- Direct Hotline Box -->
+          <div class="specialist-hotline-box">
+            <span class="hotline-title">Faculty Concierge Helpline:</span>
+            <a href="tel:+919876543210" class="hotline-anchor">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 98765 43210</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Consultation Booking Card -->
+        <div class="specialist-intake-form-col">
+          <div class="specialist-form-envelope">
+            <div class="form-envelope-head">
+              <h3 class="envelope-title">Select Attending Specialist</h3>
+              <span class="envelope-sub">Appointment confirmed within 2 clinical hours</span>
+            </div>
+
+            <form class="specialist-custom-form" id="specialistBookingForm" novalidate>
+              
+              <!-- 1. Full Name Input (Only Alphabets) -->
+              <div class="form-group" id="doctorNameGroup">
+                <label for="doctorPatientName">Patient Full Name</label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-user"></i>
+                  <input 
+                    type="text" 
+                    id="doctorPatientName" 
+                    placeholder="Enter full name" 
+                    autocomplete="off"
+                    required
+                  >
+                </div>
+                <span class="field-error" id="doctorNameError">Name must contain only alphabetic letters and spaces.</span>
+              </div>
+
+              <!-- 2. Mobile Contact Number (Only 10-digit Numbers) -->
+              <div class="form-group" id="doctorPhoneGroup">
+                <label for="doctorPatientPhone">Mobile Contact Number</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  <input 
+                    type="tel" 
+                    id="doctorPatientPhone" 
+                    placeholder="Enter 10-digit mobile number" 
+                    maxlength="10"
+                    autocomplete="off"
+                    required
+                  >
+                </div>
+                <span class="field-error" id="doctorPhoneError">Please enter a valid 10-digit mobile number.</span>
+              </div>
+
+              <!-- 3. Custom Method Dropdown (Replaces native <select>) -->
+              <div class="form-group" id="doctorSelectGroup">
+                <label id="doctorSelectLabel">Preferred Specialist / Clinic Wing</label>
+                <div class="custom-dropdown" id="specialistCustomDropdown">
+                  <button 
+                    type="button" 
+                    class="dropdown-trigger" 
+                    id="specialistDropdownTrigger" 
+                    aria-haspopup="listbox" 
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-user-doctor select-icon"></i>
+                    <span class="selected-text" id="specialistSelectedText">Choose Attending Physician</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                  </button>
+
+                  <ul class="dropdown-menu" id="specialistDropdownMenu" role="listbox" tabindex="-1">
+                    <li class="dropdown-item" role="option" data-value="treatments.html">
+                      <i class="fa-solid fa-layer-group"></i>
+                      <span>Dr. Elena Vance, MD &bull; Barrier Biology</span>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="laser-resurfacing.html">
+                      <i class="fa-solid fa-bolt-lightning"></i>
+                      <span>Dr. Marcus Thorne, MD &bull; Laser Resurfacing</span>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="pigment-clarity.html">
+                      <i class="fa-solid fa-circle-half-stroke"></i>
+                      <span>Dr. Sanya Patel, MD &bull; Melanin Optics</span>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="about.html">
+                      <i class="fa-solid fa-microscope"></i>
+                      <span>Dr. Julian Ross, MD &bull; Dermatopathology</span>
+                    </li>
+                  </ul>
+
+                  <!-- Hidden Input Storing Selected Target -->
+                  <input type="hidden" id="selectedDoctorTarget" name="selectedDoctorTarget" value="">
+                </div>
+                <span class="field-error" id="doctorSelectError">Please choose an attending specialist.</span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary cta-submit-btn" id="specialistSubmitBtn">
+                <span>Confirm Specialist Intake</span>
+                <i class="fa-solid fa-arrow-right btn-icon"></i>
+              </button>
+
+              <p class="specialist-privacy-note">
+                <i class="fa-solid fa-lock"></i>
+                <span>Direct physician-patient confidentiality guaranteed under medical code.</span>
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Site Footer -->
+<footer class="site-footer" id="siteFooter">
+  <div class="footer-container">
+    <!-- Top Grid Layout -->
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Clinical Statement -->
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo" aria-label="Aura Skincare Clinic">
+          <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px" width="150px">
+        </a>
+        <p class="brand-desc">
+          Evidence-based dermatological therapies and customized skin health regimens guided by licensed practitioners.
+        </p>
+        <div class="social-links" aria-label="Social Media">
+          <a href="error.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="error.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="error.html" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="error.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links (Synced with Scrollspy) -->
+      <div class="footer-col">
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link active">Home</a></li>
+          <li><a href="treatments.html" class="footer-link">Treatments</a></li>
+          <li><a href="about.html" class="footer-link">About Clinic</a></li>
+          <li><a href="specialists.html" class="footer-link">Dermatologists</a></li>
+          <li><a href="reviews.html" class="footer-link">Results</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Key Treatments -->
+      <div class="footer-col">
+        <h4 class="footer-title">Clinical Solutions</h4>
+        <ul class="footer-links static-links">
+          <li><a href="#treatments">Laser Skin Resurfacing</a></li>
+          <li><a href="#treatments">Chemical Peels & Glycolic</a></li>
+          <li><a href="#treatments">Targeted Acne Extraction</a></li>
+          <li><a href="#treatments">Dermal Barrier Infusions</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Clinic Info & Hours -->
+      <div class="footer-col">
+        <h4 class="footer-title">Clinic Hours</h4>
+        <ul class="schedule-list">
+          <li>
+            <span class="schedule-day">Mon - Fri:</span>
+            <span class="schedule-time">09:00 AM - 07:00 PM</span>
+          </li>
+          <li>
+            <span class="schedule-day">Saturday:</span>
+            <span class="schedule-time">10:00 AM - 05:00 PM</span>
+          </li>
+          <li>
+            <span class="schedule-day">Sunday:</span>
+            <span class="schedule-status">By Prior Appointment</span>
+          </li>
+        </ul>
+        <div class="footer-badge">
+          <i class="fa-solid fa-certificate"></i>
+          <span>ISO 9001 Certified Dermatology Unit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        &copy; 2026 Aura Skincare Clinic. All rights reserved.
+      </p>
+      <div class="legal-links">
+        <a href="error.html">Privacy Policy</a>
+        <span class="divider">&bull;</span>
+        <a href="error.html">Terms of Care</a>
+        <span class="divider">&bull;</span>
+        <a href="error.html">Medical Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+ <!-- GSAP & ScrollTrigger Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+        <script src="specialists.js"></script>
+    
+</body>
+</html>

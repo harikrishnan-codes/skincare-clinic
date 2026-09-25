@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Admissions & Staff Portal | Aura Skincare Clinic</title>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Core Theme Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="root.css">
+    <link rel="icon" href="./assets/logo.webp">
+
+
+</head>
+
+<body class="auth-page-body">
+
+    <main class="auth-wrapper">
+        <!-- Ambient Botanical Glow Orbs -->
+        <div class="auth-glow glow-1" aria-hidden="true"></div>
+        <div class="auth-glow glow-2" aria-hidden="true"></div>
+
+        <div class="auth-container">
+
+            <!-- Left Column: Editorial Clinic Branding -->
+            <div class="auth-brand-pane">
+                <a href="index.html" class="auth-logo-link">
+                    <i class="fa-solid fa-feather-pointed logo-icon"></i>
+                    <span class="logo-text">Aura Skincare</span>
+                </a>
+
+                <div class="brand-message">
+                    <div class="pill-badge auth-pill">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">Encrypted Medical Portal</span>
+                    </div>
+
+                    <h1 class="brand-heading">
+                        Physiological Diagnostics. <br>
+                        <span class="highlight-italic">Dedicated Admissions.</span>
+                    </h1>
+
+                    <p class="brand-subtext">
+                        Access secure diagnostic profiles, custom lipid compounding formulations, and direct doctor
+                        consultations under HIPAA-compliant safeguards.
+                    </p>
+                </div>
+
+                <div class="auth-trust-strip">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>256-Bit Encrypted Records</span>
+                    </div>
+                    <div class="trust-sep"></div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <span>Board-Verified Staff Access</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Multi-Card Stage -->
+            <div class="auth-forms-pane">
+                <div class="auth-card">
+
+                    <!-- ============================================================
+               VIEW 1: SIGN UP SECTION (Visible by default)
+               ============================================================ -->
+                    <div class="auth-view active-view" id="signupView">
+                        <div class="auth-card-head">
+                            <h2 class="view-title">Patient &amp; Staff Registration</h2>
+                            <p class="view-desc">Create your credentials to access clinical diagnostic records.</p>
+                        </div>
+
+                        <!-- Custom Role Selector (Avoids Native <select>) -->
+                        <div class="form-group role-group">
+                            <label class="custom-label">Account Classification</label>
+                            <div class="custom-role-switcher" role="radiogroup" aria-label="Account Role">
+                                <button type="button" class="role-btn active" data-role="client" role="radio"
+                                    aria-checked="true">
+                                    <i class="fa-solid fa-user-shield"></i>
+                                    <div class="role-text">
+                                        <strong>Client / Patient</strong>
+                                        <span>Treatment &amp; Diagnostics</span>
+                                    </div>
+                                </button>
+                                <button type="button" class="role-btn" data-role="admin" role="radio"
+                                    aria-checked="false">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                    <div class="role-text">
+                                        <strong>Admin / Doctor</strong>
+                                        <span>Clinical Staff Roster</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <input type="hidden" id="signupRole" value="client">
+                        </div>
+
+                        <form class="auth-form" id="signupForm" novalidate>
+                            <!-- Full Name (Only Alphabets) -->
+                            <div class="form-group" id="signupNameGroup">
+                                <label for="signupName">Full Legal Name</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-user input-icon"></i>
+                                    <input type="text" id="signupName" placeholder="Dr. / Mr. / Ms. Name"
+                                        autocomplete="off" required>
+                                </div>
+                                <span class="field-error" id="signupNameError">Only alphabetic letters and spaces are
+                                    allowed.</span>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="form-group" id="signupEmailGroup">
+                                <label for="signupEmail">Email Address</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-envelope input-icon"></i>
+                                    <input type="email" id="signupEmail" placeholder="patient@auraclinic.com"
+                                        autocomplete="off" required>
+                                </div>
+                                <span class="field-error" id="signupEmailError">Please enter a valid email address
+                                    format.</span>
+                            </div>
+
+                            <!-- Password with Fixed Internal Eye Toggle -->
+                            <div class="form-group" id="signupPasswordGroup">
+                                <label for="signupPassword">Password</label>
+                                <div class="input-wrap password-wrap">
+                                    <i class="fa-solid fa-lock input-icon"></i>
+                                    <input type="password" id="signupPassword" placeholder="Minimum 6 characters"
+                                        autocomplete="new-password" required>
+                                    <button type="button" class="password-toggle-btn"
+                                        aria-label="Toggle password visibility" data-target="signupPassword">
+                                        <i class="fa-regular fa-eye-slash"></i>
+                                    </button>
+                                </div>
+                                <span class="field-error" id="signupPasswordError">Password must be at least 6
+                                    characters long.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary auth-submit-btn" id="signupSubmitBtn">
+                                <span>Complete Registration</span>
+                                <i class="fa-solid fa-arrow-right btn-icon"></i>
+                            </button>
+
+                            <div class="auth-switch-prompt">
+                                <span>Already have a verified clinical account?</span>
+                                <button type="button" class="switch-link" id="goToLoginFromSignup">Access Sign
+                                    In</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- ============================================================
+               VIEW 2: SIGN IN / LOGIN SECTION
+               ============================================================ -->
+                    <div class="auth-view" id="loginView">
+                        <div class="auth-card-head">
+                            <h2 class="view-title">Portal Sign In</h2>
+                            <p class="view-desc">Enter your verified details to enter your dashboard directly.</p>
+                        </div>
+
+                        <!-- Login Direct Role Choice (Enables direct routing for direct logins) -->
+                        <div class="form-group role-group">
+                            <label class="custom-label">Target Portal Clearance</label>
+                            <div class="custom-role-switcher" id="loginRoleSwitcher" role="radiogroup"
+                                aria-label="Login Portal Role">
+                                <button type="button" class="role-btn active" data-role="client" role="radio"
+                                    aria-checked="true">
+                                    <i class="fa-solid fa-user-shield"></i>
+                                    <div class="role-text">
+                                        <strong>Client Portal</strong>
+                                        <span>Patient Health File</span>
+                                    </div>
+                                </button>
+                                <button type="button" class="role-btn" data-role="admin" role="radio"
+                                    aria-checked="false">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                    <div class="role-text">
+                                        <strong>Admin Portal</strong>
+                                        <span>Physician Operations</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <input type="hidden" id="loginRole" value="client">
+                        </div>
+
+                        <form class="auth-form" id="loginForm" novalidate>
+                            <!-- Name Input (Only Alphabets) -->
+                            <div class="form-group" id="loginNameGroup">
+                                <label for="loginName">Account Holder Name</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-user input-icon"></i>
+                                    <input type="text" id="loginName" placeholder="Enter your full name"
+                                        autocomplete="off" required>
+                                </div>
+                                <span class="field-error" id="loginNameError">Only alphabetic letters and spaces are
+                                    allowed.</span>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="form-group" id="loginEmailGroup">
+                                <label for="loginEmail">Email Address</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-envelope input-icon"></i>
+                                    <input type="email" id="loginEmail" placeholder="name@auraclinic.com"
+                                        autocomplete="off" required>
+                                </div>
+                                <span class="field-error" id="loginEmailError">Please enter a valid email address
+                                    format.</span>
+                            </div>
+
+                            <!-- Password with Fixed Internal Eye Toggle -->
+                            <div class="form-group" id="loginPasswordGroup">
+                                <div class="label-with-action">
+                                    <label for="loginPassword">Password</label>
+                                    <button type="button" class="forgot-link" id="goToForgotFromLogin">Forgot
+                                        Password?</button>
+                                </div>
+                                <div class="input-wrap password-wrap">
+                                    <i class="fa-solid fa-lock input-icon"></i>
+                                    <input type="password" id="loginPassword" placeholder="Minimum 6 characters"
+                                        autocomplete="current-password" required>
+                                    <button type="button" class="password-toggle-btn"
+                                        aria-label="Toggle password visibility" data-target="loginPassword">
+                                        <i class="fa-regular fa-eye-slash"></i>
+                                    </button>
+                                </div>
+                                <span class="field-error" id="loginPasswordError">Password must be at least 6 characters
+                                    long.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary auth-submit-btn" id="loginSubmitBtn">
+                                <span>Enter Authorized Dashboard</span>
+                                <i class="fa-solid fa-arrow-right btn-icon"></i>
+                            </button>
+
+                            <div class="auth-switch-prompt">
+                                <span>Need to establish an initial record?</span>
+                                <button type="button" class="switch-link" id="goToSignupFromLogin">Create
+                                    Account</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- ============================================================
+               VIEW 3: FORGOT PASSWORD SECTION
+               ============================================================ -->
+                    <div class="auth-view" id="forgotView">
+                        <div class="auth-card-head">
+                            <h2 class="view-title">Reset Access Token</h2>
+                            <p class="view-desc">Submit your registered email. Once validated, our system will route you
+                                to the security dispatch.</p>
+                        </div>
+
+                        <form class="auth-form" id="forgotForm" novalidate>
+                            <div class="form-group" id="forgotEmailGroup">
+                                <label for="forgotEmail">Registered Clinical Email</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-envelope input-icon"></i>
+                                    <input type="email" id="forgotEmail" placeholder="registered@auraclinic.com"
+                                        autocomplete="off" required>
+                                </div>
+                                <span class="field-error" id="forgotEmailError">Please enter a valid email address
+                                    format.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary auth-submit-btn" id="forgotSubmitBtn">
+                                <span>Verify &amp; Generate Recovery Key</span>
+                                <i class="fa-solid fa-paper-plane btn-icon"></i>
+                            </button>
+
+                            <div class="auth-switch-prompt">
+                                <span>Remembered your credentials?</span>
+                                <button type="button" class="switch-link" id="goToLoginFromForgot">Return to Sign
+                                    In</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Core Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Views
+            const signupView = document.getElementById('signupView');
+            const loginView = document.getElementById('loginView');
+            const forgotView = document.getElementById('forgotView');
+
+            // Navigation Links
+            const goToLoginFromSignup = document.getElementById('goToLoginFromSignup');
+            const goToSignupFromLogin = document.getElementById('goToSignupFromLogin');
+            const goToForgotFromLogin = document.getElementById('goToForgotFromLogin');
+            const goToLoginFromForgot = document.getElementById('goToLoginFromForgot');
+
+            function switchAuthView(targetView) {
+                [signupView, loginView, forgotView].forEach(view => {
+                    if (view) {
+                        view.classList.remove('active-view');
+                        view.style.display = 'none';
+                    }
+                });
+
+                if (targetView) {
+                    targetView.style.display = 'block';
+                    setTimeout(() => {
+                        targetView.classList.add('active-view');
+                    }, 10);
+                }
+            }
+
+            if (goToLoginFromSignup) goToLoginFromSignup.addEventListener('click', () => switchAuthView(loginView));
+            if (goToSignupFromLogin) goToSignupFromLogin.addEventListener('click', () => switchAuthView(signupView));
+            if (goToForgotFromLogin) goToForgotFromLogin.addEventListener('click', () => switchAuthView(forgotView));
+            if (goToLoginFromForgot) goToLoginFromForgot.addEventListener('click', () => switchAuthView(loginView));
+
+            // ==========================================================================
+            // 1. WORKING PASSWORD EYE TOGGLE (REVEALS / HIDES TEXT)
+            // ==========================================================================
+            const toggleButtons = document.querySelectorAll('.password-toggle-btn');
+
+            toggleButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const inputId = btn.getAttribute('data-target');
+                    const inputEl = document.getElementById(inputId);
+                    const iconEl = btn.querySelector('i');
+
+                    if (!inputEl || !iconEl) return;
+
+                    if (inputEl.type === 'password') {
+                        inputEl.type = 'text'; // Reveal characters
+                        iconEl.classList.remove('fa-eye-slash');
+                        iconEl.classList.add('fa-eye');
+                        btn.setAttribute('aria-label', 'Hide password');
+                    } else {
+                        inputEl.type = 'password'; // Hide characters
+                        iconEl.classList.remove('fa-eye');
+                        iconEl.classList.add('fa-eye-slash');
+                        btn.setAttribute('aria-label', 'Show password');
+                    }
+                });
+            });
+
+            // ==========================================================================
+            // 2. CUSTOM ROLE SELECTOR (ADMIN vs CLIENT)
+            // ==========================================================================
+            function setupRoleSwitcher(switcherContainer, hiddenInputId) {
+                if (!switcherContainer) return;
+                const buttons = switcherContainer.querySelectorAll('.role-btn');
+                const hiddenInput = document.getElementById(hiddenInputId);
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        buttons.forEach(b => {
+                            b.classList.remove('active');
+                            b.setAttribute('aria-checked', 'false');
+                        });
+                        btn.classList.add('active');
+                        btn.setAttribute('aria-checked', 'true');
+
+                        if (hiddenInput) {
+                            hiddenInput.value = btn.dataset.role;
+                        }
+                    });
+                });
+            }
+
+            // Setup both signup and direct-login role switchers
+            setupRoleSwitcher(document.querySelector('#signupView .custom-role-switcher'), 'signupRole');
+            setupRoleSwitcher(document.getElementById('loginRoleSwitcher'), 'loginRole');
+
+            // ==========================================================================
+            // 3. STRICT INPUT SANITIZATION & RESTRICTION
+            // ==========================================================================
+            const nameInputs = [
+                { input: document.getElementById('signupName'), group: document.getElementById('signupNameGroup') },
+                { input: document.getElementById('loginName'), group: document.getElementById('loginNameGroup') }
+            ];
+
+            // Restrict to ONLY alphabetical letters (A-Z, a-z) and spaces in real-time
+            nameInputs.forEach(({ input, group }) => {
+                if (!input || !group) return;
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/[^A-Za-z\s]/g, '');
+                    if (input.value.trim().length >= 2) {
+                        group.classList.remove('has-error');
+                    }
+                });
+            });
+
+            const nameRegex = /^[A-Za-z\s]{2,50}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Clear errors automatically as user types
+            const autoClear = (inputEl, groupEl) => {
+                if (inputEl && groupEl) {
+                    inputEl.addEventListener('input', () => groupEl.classList.remove('has-error'));
+                }
+            };
+
+            autoClear(document.getElementById('signupEmail'), document.getElementById('signupEmailGroup'));
+            autoClear(document.getElementById('signupPassword'), document.getElementById('signupPasswordGroup'));
+            autoClear(document.getElementById('loginEmail'), document.getElementById('loginEmailGroup'));
+            autoClear(document.getElementById('loginPassword'), document.getElementById('loginPasswordGroup'));
+            autoClear(document.getElementById('forgotEmail'), document.getElementById('forgotEmailGroup'));
+
+            // ==========================================================================
+            // 4. SIGN UP VALIDATION -> TRANSITIONS TO LOGIN WITH DATA PRE-FILLED
+            // ==========================================================================
+            const signupForm = document.getElementById('signupForm');
+            const signupName = document.getElementById('signupName');
+            const signupEmail = document.getElementById('signupEmail');
+            const signupPassword = document.getElementById('signupPassword');
+            const signupRole = document.getElementById('signupRole');
+            const signupSubmitBtn = document.getElementById('signupSubmitBtn');
+
+            if (signupForm) {
+                signupForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    if (!nameRegex.test(signupName.value.trim())) {
+                        document.getElementById('signupNameGroup').classList.add('has-error');
+                        isValid = false;
+                    }
+                    if (!emailRegex.test(signupEmail.value.trim())) {
+                        document.getElementById('signupEmailGroup').classList.add('has-error');
+                        isValid = false;
+                    }
+                    if (signupPassword.value.length < 6) {
+                        document.getElementById('signupPasswordGroup').classList.add('has-error');
+                        isValid = false;
+                    }
+
+                    if (!isValid) return;
+
+                    const registeredUser = {
+                        name: signupName.value.trim(),
+                        email: signupEmail.value.trim(),
+                        password: signupPassword.value,
+                        role: signupRole ? signupRole.value : 'client'
+                    };
+
+                    // Store credentials locally
+                    localStorage.setItem('aura_registered_user', JSON.stringify(registeredUser));
+
+                    signupSubmitBtn.disabled = true;
+                    signupSubmitBtn.innerHTML = `
+        <i class="fa-solid fa-circle-notch fa-spin"></i>
+        <span>Creating Profile...</span>
+      `;
+
+                    // Redirect to Login View after 1 second
+                    setTimeout(() => {
+                        signupSubmitBtn.disabled = false;
+                        signupSubmitBtn.innerHTML = `<span>Complete Registration</span><i class="fa-solid fa-arrow-right btn-icon"></i>`;
+
+                        // Pre-fill fields on the login form
+                        const loginNameInput = document.getElementById('loginName');
+                        const loginEmailInput = document.getElementById('loginEmail');
+                        const loginPasswordInput = document.getElementById('loginPassword');
+
+                        if (loginNameInput) loginNameInput.value = registeredUser.name;
+                        if (loginEmailInput) loginEmailInput.value = registeredUser.email;
+                        if (loginPasswordInput) loginPasswordInput.value = registeredUser.password;
+
+                        // Sync selected role to Login role buttons
+                        const loginRoleSwitcher = document.getElementById('loginRoleSwitcher');
+                        if (loginRoleSwitcher) {
+                            const matchingBtn = loginRoleSwitcher.querySelector(`[data-role="${registeredUser.role}"]`);
+                            if (matchingBtn) matchingBtn.click();
+                        }
+
+                        // Switch smoothly to the Login tab
+                        switchAuthView(loginView);
+                    }, 1000);
+                });
+            }
+
+            // ==========================================================================
+            // 5. LOGIN VALIDATION -> DIRECT LOGIN OR POST-SIGNUP REDIRECT TO DASHBOARD
+            // ==========================================================================
+            const loginForm = document.getElementById('loginForm');
+            const loginName = document.getElementById('loginName');
+            const loginEmail = document.getElementById('loginEmail');
+            const loginPassword = document.getElementById('loginPassword');
+            const loginRole = document.getElementById('loginRole');
+            const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    // Validate Name (Only alphabets)
+                    if (!nameRegex.test(loginName.value.trim())) {
+                        document.getElementById('loginNameGroup').classList.add('has-error');
+                        isValid = false;
+                    }
+
+                    // Validate Email
+                    const emailVal = loginEmail.value.trim();
+                    if (!emailRegex.test(emailVal)) {
+                        document.getElementById('loginEmailGroup').classList.add('has-error');
+                        isValid = false;
+                    }
+
+                    // Validate Password (min 6 chars)
+                    if (loginPassword.value.length < 6) {
+                        document.getElementById('loginPasswordGroup').classList.add('has-error');
+                        isValid = false;
+                    }
+
+                    if (!isValid) return;
+
+                    // Determine destination role (works whether direct login or post-signup)
+                    const chosenRole = loginRole ? loginRole.value : 'client';
+
+                    // Store the active session data for the dashboard to display
+                    sessionStorage.setItem('current_logged_email', emailVal);
+                    sessionStorage.setItem('current_logged_name', loginName.value.trim());
+                    sessionStorage.setItem('current_logged_role', chosenRole);
+
+                    loginSubmitBtn.disabled = true;
+                    loginSubmitBtn.innerHTML = `
+        <i class="fa-solid fa-circle-notch fa-spin"></i>
+        <span>Authenticating...</span>
+      `;
+
+                    // Select target dashboard URL
+                    const targetDashboard = chosenRole === 'admin'
+                        ? 'admin.html'
+                        : 'client.html';
+
+                    // Verify file existence, fallback to error.html if not yet created
+                    try {
+                        const response = await fetch(targetDashboard, { method: 'HEAD' });
+                        if (response.ok) {
+                            window.location.href = targetDashboard;
+                        } else {
+                            window.location.href = 'error.html';
+                        }
+                    } catch (err) {
+                        window.location.href = 'error.html';
+                    }
+                });
+            }
+
+            // ==========================================================================
+            // 6. FORGOT PASSWORD -> REDIRECTS TO error.html
+            // ==========================================================================
+            const forgotForm = document.getElementById('forgotForm');
+            const forgotEmail = document.getElementById('forgotEmail');
+            const forgotSubmitBtn = document.getElementById('forgotSubmitBtn');
+
+            if (forgotForm) {
+                forgotForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    if (!emailRegex.test(forgotEmail.value.trim())) {
+                        document.getElementById('forgotEmailGroup').classList.add('has-error');
+                        return;
+                    }
+
+                    forgotSubmitBtn.disabled = true;
+                    forgotSubmitBtn.innerHTML = `
+        <i class="fa-solid fa-circle-notch fa-spin"></i>
+        <span>Validating Recovery Token...</span>
+      `;
+
+                    // Validates and redirects to existing error.html
+                    setTimeout(() => {
+                        window.location.href = 'error.html';
+                    }, 1000);
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

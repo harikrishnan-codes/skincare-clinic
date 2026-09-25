@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="icon" href="./assets/logo.webp">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="treatments.css">
+
+</head>
+
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Aura Skincare Clinic">
+                <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px"
+                    width="150px">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+                    <li><a href="about.html" class="nav-link">About Clinic</a></li>
+                    <li><a href="specialists.html" class="nav-link">Dermatologists</a></li>
+                    <li><a href="reviews.html" class="nav-link">Results</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Button -->
+            <div class="header-actions">
+                <a href="auth.html" class="btn btn-primary header-cta">
+                    <span>Sign In</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+
+                <!-- Hamburger Button (Mobile) -->
+                <button class="hamburger-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar bar-top"></span>
+                    <span class="bar bar-middle"></span>
+                    <span class="bar bar-bottom"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Overlay Backdrop -->
+        <div class="mobile-backdrop" id="menuBackdrop"></div>
+
+        <!-- Mobile Navigation Drawer -->
+        <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+            <div class="drawer-header">
+                <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image" height="50px"
+                    width="150px">
+                <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="mobile-link active">Home</a></li>
+                <li><a href="treatments.html" class="mobile-link">Treatments</a></li>
+                <li><a href="about.html" class="mobile-link">About Clinic</a></li>
+                <li><a href="specialists.html" class="mobile-link">Dermatologists</a></li>
+                <li><a href="reviews.html" class="mobile-link">Results</a></li>
+            </ul>
+            <div class="drawer-footer">
+                <a href="auth.html" class="btn btn-primary mobile-cta">
+                    <span>Sign In</span>
+                </a>
+                <p class="drawer-note">Care Hotline: +91 98765 43210</p>
+            </div>
+        </aside>
+    </header>
+
+
+
+
+
+
+
+<!-- Treatments Page Hero / Intro Section -->
+<section class="treatment-hero-section" id="treatmentHero">
+  <div class="treatment-hero-container">
+    
+    <!-- Top Editorial Header & Category Selector -->
+    <div class="treatment-hero-content">
+      
+      <!-- Pre-heading Badge with Breadcrumb -->
+      <div class="hero-breadcrumb-badge">
+        <a href="index.html" class="breadcrumb-root">Home</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">Clinical Formulary & Protocols</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="treatment-hero-title">
+        Targeted Dermal Therapies. <br>
+        <span class="highlight-italic">Molecular Precision.</span>
+      </h1>
+
+      <p class="treatment-hero-desc">
+        Explore our spectrum of physician-guided dermatological procedures. Every intervention is calibrated through high-resolution diagnostic imaging, utilizing bio-compatible peptides, medical-grade chemical exfoliants, and fractional laser wavelengths.
+      </p>
+
+      <!-- Live Clinical Category Quick-Filter Bar -->
+      <div class="treatment-filter-bar" role="tablist" aria-label="Treatment Categories">
+        <button type="button" class="filter-chip active" data-category="all">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>All Therapies (14)</span>
+        </button>
+        <button type="button" class="filter-chip" data-category="laser">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          <span>Laser & Phototherapy</span>
+        </button>
+        <button type="button" class="filter-chip" data-category="barrier">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Barrier Restoration</span>
+        </button>
+        <button type="button" class="filter-chip" data-category="peels">
+          <i class="fa-solid fa-droplet"></i>
+          <span>Clinical Peels</span>
+        </button>
+        <button type="button" class="filter-chip" data-category="biostim">
+          <i class="fa-solid fa-dna"></i>
+          <span>Biostimulators</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Architectural Media Grid & Diagnostic Metrics -->
+    <div class="treatment-hero-visual">
+      
+      <!-- Ambient Backing Glow -->
+      <div class="treatment-visual-glow" aria-hidden="true"></div>
+
+      <!-- Main Visual Media Card -->
+      <div class="treatment-visual-frame">
+        <img 
+          src="https://images.unsplash.com/photo-1512290900672-1f5518b6e680?auto=format&fit=crop&w=1000&q=80" 
+          alt="Dermatologist performing precision clinical skin treatment" 
+          class="treatment-hero-img"
+          loading="eager"
+        >
+        <!-- Floating Protocol Status Pill -->
+        <div class="treatment-live-status">
+          <span class="status-pulse-dot"></span>
+          <span>Diagnostics-Preceded Protocols Only</span>
+        </div>
+      </div>
+
+      <!-- Key Clinical Benchmarks Box -->
+      <div class="treatment-metrics-card">
+        <div class="metric-row">
+          <div class="metric-item">
+            <span class="metric-digit">100%</span>
+            <span class="metric-label">Physician Administered</span>
+          </div>
+          <div class="metric-line"></div>
+          <div class="metric-item">
+            <span class="metric-digit">&lt;2 hrs</span>
+            <span class="metric-label">Avg. Post-Laser Downtime</span>
+          </div>
+          <div class="metric-line"></div>
+          <div class="metric-item">
+            <span class="metric-digit">pH 5.5</span>
+            <span class="metric-label">Physiological Mantle Lock</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Claymorphic Formulations & Compounds Section -->
+<section class="clay-compounds-section" id="compounds">
+  <div class="clay-container">
+    
+    <!-- Section Header -->
+    <div class="clay-header">
+      <div class="pill-badge clay-pill">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Cellular Bio-Active Compounding</span>
+      </div>
+      <h2 class="clay-title">
+        Tactile Chemistry. <span class="highlight-italic">Pure Actives.</span>
+      </h2>
+      <p class="clay-desc">
+        Explore our compounding pods. Every proprietary emulsion is mixed in a certified sterile environment, pairing micro-molecular actives with natural lipid barriers to optimize cellular absorption.
+      </p>
+    </div>
+
+    <!-- Claymorphic Cards Grid -->
+    <div class="clay-grid">
+      
+      <!-- Clay Card 1: Hydration Matrix -->
+      <article class="clay-card" data-category="barrier">
+        <div class="clay-badge-strip">
+          <span class="clay-tag">Formulation 01</span>
+          <span class="clay-status-pill">Suspension</span>
+        </div>
+        
+        <div class="clay-orb-wrapper">
+          <div class="clay-orb orb-blush">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+        </div>
+
+        <div class="clay-body">
+          <h3 class="clay-card-title">Poly-Glutamic & 5D HA</h3>
+          <p class="clay-card-desc">
+            A biomimetic hydration matrix holding 5,000 times its molecular weight in moisture, locking intracellular water beneath a flexible lipid cushion.
+          </p>
+
+          <div class="clay-metrics-pill">
+            <div class="metric-segment">
+              <span class="metric-val">+340%</span>
+              <span class="metric-tag">Retention</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-segment">
+              <span class="metric-val">pH 5.4</span>
+              <span class="metric-tag">Mantle Lock</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="clay-action-btn">
+            <span>Select Protocol</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Clay Card 2: Copper Peptides (Featured) -->
+      <article class="clay-card featured-clay" data-category="biostim">
+        <div class="clay-badge-strip">
+          <span class="clay-tag featured-tag">Signature Core</span>
+          <span class="clay-status-pill">Lyophilized</span>
+        </div>
+        
+        <div class="clay-orb-wrapper">
+          <div class="clay-orb orb-copper">
+            <i class="fa-solid fa-dna"></i>
+          </div>
+        </div>
+
+        <div class="clay-body">
+          <h3 class="clay-card-title">Tripeptide-1 & PDRN Pod</h3>
+          <p class="clay-card-desc">
+            Marine-derived polynucleotide chains and high-density copper peptide conjugates that signal degraded fibroblasts to initiate rapid neo-collagenesis.
+          </p>
+
+          <div class="clay-metrics-pill">
+            <div class="metric-segment">
+              <span class="metric-val">99.1%</span>
+              <span class="metric-tag">Purity</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-segment">
+              <span class="metric-val">3.2x</span>
+              <span class="metric-tag">Density Lift</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="clay-action-btn btn-highlight">
+            <span>Select Protocol</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Clay Card 3: Clarifying Complex -->
+      <article class="clay-card" data-category="peels">
+        <div class="clay-badge-strip">
+          <span class="clay-tag">Formulation 03</span>
+          <span class="clay-status-pill">Buffered</span>
+        </div>
+        
+        <div class="clay-orb-wrapper">
+          <div class="clay-orb orb-slate">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+        </div>
+
+        <div class="clay-body">
+          <h3 class="clay-card-title">Liposomal Salicin & Azelaic</h3>
+          <p class="clay-card-desc">
+            Micro-encapsulated organic willow salicin and 10% micronized azelaic acid that dislodges keratinized plugs without triggering reactive erythema.
+          </p>
+
+          <div class="clay-metrics-pill">
+            <div class="metric-segment">
+              <span class="metric-val">-68%</span>
+              <span class="metric-tag">Sebum Flux</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-segment">
+              <span class="metric-val">0 min</span>
+              <span class="metric-tag">Downtime</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="clay-action-btn">
+            <span>Select Protocol</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Claymorphic Laboratory Footnote -->
+    <div class="clay-status-strip">
+      <div class="status-pod">
+        <i class="fa-solid fa-snowflake"></i>
+        <span>Cold-Chain Compounded at 4°C</span>
+      </div>
+      <div class="status-pod">
+        <i class="fa-solid fa-shield-virus"></i>
+        <span>Nitrogen-Purged Single-Dose Ambiance</span>
+      </div>
+      <div class="status-pod">
+        <i class="fa-solid fa-certificate"></i>
+        <span>Medical Grade ISO 22716 Certified</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Card-Stack / Accordion Deck UI Section -->
+<section class="deck-section" id="journey">
+  <div class="deck-container">
+    
+    <!-- Section Header -->
+    <div class="deck-header">
+      <div class="pill-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Clinical Pathway Architecture</span>
+      </div>
+      <h2 class="deck-title">
+        The Four-Phase <span class="highlight-italic">Recovery Deck</span>
+      </h2>
+      <p class="deck-desc">
+        Dermatological transformation requires sequenced biological adaptation. Expand each card in the deck to reveal the protocol objectives, clinical ingredients, and downtime milestones.
+      </p>
+    </div>
+
+    <!-- Accordion Deck Stack -->
+    <div class="deck-stack" id="treatmentDeck">
+      
+      <!-- Card 1: Diagnostic Reset (Active by default) -->
+      <article class="deck-card active" data-deck="0">
+        <div class="card-edge-label">
+          <span class="step-num">PHASE 01</span>
+          <span class="step-title">Barrier Reset</span>
+        </div>
+        <div class="card-deck-content">
+          <div class="deck-badge-row">
+            <span class="phase-tag">Days 1 – 14</span>
+            <span class="state-pill"><i class="fa-solid fa-microscope"></i> Diagnostic Calibration</span>
+          </div>
+          <h3 class="deck-card-name">Baseline Lipid Mantle Normalization</h3>
+          <p class="deck-card-text">
+            Before active lasers or peels, the stratum corneum must be sealed. We deploy physiological pH 5.4 bio-mimetic lipid washes and ceramide NP infusions to stop transepidermal water loss.
+          </p>
+          <div class="deck-spec-grid">
+            <div class="spec-cell">
+              <span class="spec-label">Target Zone</span>
+              <span class="spec-val">Acid Mantle / TEWL</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Key Compound</span>
+              <span class="spec-val">Ectoin & Ceramide III</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Cellular Objective</span>
+              <span class="spec-val">Inflammation Halting</span>
+            </div>
+          </div>
+          <div class="deck-card-action">
+            <a href="#booking" class="btn btn-primary deck-btn">
+              <span>Schedule Phase 01</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="deck-bg-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+      </article>
+
+      <!-- Card 2: Precision Purge -->
+      <article class="deck-card" data-deck="1">
+        <div class="card-edge-label">
+          <span class="step-num">PHASE 02</span>
+          <span class="step-title">Follicular Clarify</span>
+        </div>
+        <div class="card-deck-content">
+          <div class="deck-badge-row">
+            <span class="phase-tag">Weeks 3 – 4</span>
+            <span class="state-pill"><i class="fa-solid fa-droplet"></i> Chemical Extraction</span>
+          </div>
+          <h3 class="deck-card-name">Canal Clarification & Sebum Regulation</h3>
+          <p class="deck-card-text">
+            Ultrasonic acoustic extraction combined with liposomal salicylic fractions cleanses deep sebaceous ducts without inducing post-inflammatory hyperpigmentation.
+          </p>
+          <div class="deck-spec-grid">
+            <div class="spec-cell">
+              <span class="spec-label">Target Zone</span>
+              <span class="spec-val">Pore Infundibulum</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Key Compound</span>
+              <span class="spec-val">Willow Salicin (7%)</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Cellular Objective</span>
+              <span class="spec-val">Microcomedone Dissolution</span>
+            </div>
+          </div>
+          <div class="deck-card-action">
+            <a href="#booking" class="btn btn-primary deck-btn">
+              <span>Schedule Phase 02</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="deck-bg-icon">
+          <i class="fa-solid fa-flask"></i>
+        </div>
+      </article>
+
+      <!-- Card 3: Structural Remodeling -->
+      <article class="deck-card" data-deck="2">
+        <div class="card-edge-label">
+          <span class="step-num">PHASE 03</span>
+          <span class="step-title">Matrix Remodel</span>
+        </div>
+        <div class="card-deck-content">
+          <div class="deck-badge-row">
+            <span class="phase-tag">Weeks 5 – 8</span>
+            <span class="state-pill"><i class="fa-solid fa-bolt-lightning"></i> Fractional Thermal</span>
+          </div>
+          <h3 class="deck-card-name">Sub-surface Fibroblast Proliferation</h3>
+          <p class="deck-card-text">
+            Non-ablative Erbium photon arrays induce controlled thermal zones in the reticular dermis, prompting rapid production of high-tensile Type I and III collagen fibers.
+          </p>
+          <div class="deck-spec-grid">
+            <div class="spec-cell">
+              <span class="spec-label">Target Zone</span>
+              <span class="spec-val">Dermal-Epidermal Junction</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Key Compound</span>
+              <span class="spec-val">PDRN & Copper Tripeptide</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Cellular Objective</span>
+              <span class="spec-val">Neo-Collagenesis</span>
+            </div>
+          </div>
+          <div class="deck-card-action">
+            <a href="#booking" class="btn btn-primary deck-btn">
+              <span>Schedule Phase 03</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="deck-bg-icon">
+          <i class="fa-solid fa-dna"></i>
+        </div>
+      </article>
+
+      <!-- Card 4: Long-Term Homeostasis -->
+      <article class="deck-card" data-deck="3">
+        <div class="card-edge-label">
+          <span class="step-num">PHASE 04</span>
+          <span class="step-title">Radiant Lock</span>
+        </div>
+        <div class="card-deck-content">
+          <div class="deck-badge-row">
+            <span class="phase-tag">Ongoing Maintenance</span>
+            <span class="state-pill"><i class="fa-solid fa-certificate"></i> Homeostasis Lock</span>
+          </div>
+          <h3 class="deck-card-name">Long-Term Photoprotection & Cellular Vitality</h3>
+          <p class="deck-card-text">
+            Stabilization with broad-spectrum physical mineral blocks, topical enzymatic scavengers, and bi-monthly LED bio-infusions to lock in glass-like optical clarity.
+          </p>
+          <div class="deck-spec-grid">
+            <div class="spec-cell">
+              <span class="spec-label">Target Zone</span>
+              <span class="spec-val">Total Dermal Complex</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Key Compound</span>
+              <span class="spec-val">Superoxide Dismutase</span>
+            </div>
+            <div class="spec-cell">
+              <span class="spec-label">Cellular Objective</span>
+              <span class="spec-val">Free Radical Quenching</span>
+            </div>
+          </div>
+          <div class="deck-card-action">
+            <a href="#booking" class="btn btn-primary deck-btn">
+              <span>Schedule Phase 04</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="deck-bg-icon">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Retro-Futurism & Vaporwave Dermal Photonics Section -->
+<section class="retrowave-section" id="photonics">
+  <!-- Perspective Wireframe Cyber-Grid Background -->
+  <div class="vapor-grid-canvas" aria-hidden="true">
+    <div class="grid-horizon"></div>
+    <div class="grid-perspective-plane"></div>
+    <div class="ambient-vapor-sun"></div>
+  </div>
+
+  <div class="vapor-container">
+    
+    <!-- Section Header (Cyber-Editorial Typography) -->
+    <div class="vapor-header">
+      <div class="pill-badge vapor-pill">
+        <span class="badge-dot vapor-dot"></span>
+        <span class="badge-text">Photon Frequency Matrix &bull; Est. 1984 / 2026</span>
+      </div>
+      <h2 class="vapor-title">
+        Quantum Light. <span class="vapor-neon-text">Retro-Photonic Radiance.</span>
+      </h2>
+      <p class="vapor-desc">
+        Where analog low-level light therapy intersects future molecular bio-synthesis. Synthesize coherent photon wavelengths to energize mitochondrial ATP synthesis and reverse UV-induced photo-aging.
+      </p>
+    </div>
+
+    <!-- Futuristic Vapor-Decks Grid -->
+    <div class="vapor-cards-grid">
+      
+      <!-- Card 1: 633nm Synthesized Crimson -->
+      <article class="vapor-card" data-wavelength="633">
+        <div class="vapor-card-glow"></div>
+        <div class="vapor-card-top">
+          <span class="cyber-code">FREQ // 633.2 NM</span>
+          <span class="cyber-status-tag red-neon">Deep Collagen</span>
+        </div>
+
+        <div class="vapor-visualizer-box">
+          <div class="sound-wave-bars">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+            <span class="bar bar-5"></span>
+            <span class="bar bar-6"></span>
+          </div>
+          <span class="vapor-spec-readout">λ = 633nm &bull; 85 J/cm²</span>
+        </div>
+
+        <div class="vapor-card-body">
+          <h3 class="vapor-card-title">Crimson Photon Induction</h3>
+          <p class="vapor-card-desc">
+            Mono-frequency red waves penetrate 8mm through dermal architecture, recharging cytochrome c oxidase to accelerate tissue repair and elastin synthesis.
+          </p>
+
+          <div class="vapor-metric-strip">
+            <div class="v-metric">
+              <span class="v-num">8.2 mm</span>
+              <span class="v-label">Penetration</span>
+            </div>
+            <div class="v-divider"></div>
+            <div class="v-metric">
+              <span class="v-num">+210%</span>
+              <span class="v-label">ATP Influx</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn vapor-btn">
+            <span>Synchronize Wave</span>
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: 415nm Synth Blue (Featured Vapor Card) -->
+      <article class="vapor-card featured-vapor" data-wavelength="415">
+        <div class="vapor-card-glow"></div>
+        <div class="vapor-card-top">
+          <span class="cyber-code">FREQ // 415.0 NM</span>
+          <span class="cyber-status-tag copper-neon">Bactericidal</span>
+        </div>
+
+        <div class="vapor-visualizer-box blue-laser">
+          <div class="sound-wave-bars">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+            <span class="bar bar-5"></span>
+            <span class="bar bar-6"></span>
+          </div>
+          <span class="vapor-spec-readout">λ = 415nm &bull; 40 mW/cm²</span>
+        </div>
+
+        <div class="vapor-card-body">
+          <h3 class="vapor-card-title">Ultraviolet Blue Photolysis</h3>
+          <p class="vapor-card-desc">
+            Generates singlet oxygen molecules that selectively neutralize *Cutibacterium acnes* inside congested pores without thermal damage to surrounding tissue.
+          </p>
+
+          <div class="vapor-metric-strip">
+            <div class="v-metric">
+              <span class="v-num">99.4%</span>
+              <span class="v-label">Porphyrin Kill</span>
+            </div>
+            <div class="v-divider"></div>
+            <div class="v-metric">
+              <span class="v-num">0.0 sec</span>
+              <span class="v-label">Downtime</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn vapor-btn featured-btn">
+            <span>Synchronize Wave</span>
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: 830nm Near-Infrared Vector -->
+      <article class="vapor-card" data-wavelength="830">
+        <div class="vapor-card-glow"></div>
+        <div class="vapor-card-top">
+          <span class="cyber-code">FREQ // 830.4 NM</span>
+          <span class="cyber-status-tag gold-neon">Micro-Vascular</span>
+        </div>
+
+        <div class="vapor-visualizer-box">
+          <div class="sound-wave-bars">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+            <span class="bar bar-5"></span>
+            <span class="bar bar-6"></span>
+          </div>
+          <span class="vapor-spec-readout">λ = 830nm &bull; 110 J/cm²</span>
+        </div>
+
+        <div class="vapor-card-body">
+          <h3 class="vapor-card-title">Near-Infrared Resonance</h3>
+          <p class="vapor-card-desc">
+            Invisible photonic vectors stimulate local lymphatic flow, reduce post-inflammatory edema, and soothe post-laser erythema in under 20 minutes.
+          </p>
+
+          <div class="vapor-metric-strip">
+            <div class="v-metric">
+              <span class="v-num">-74%</span>
+              <span class="v-label">Edema Index</span>
+            </div>
+            <div class="v-divider"></div>
+            <div class="v-metric">
+              <span class="v-num">12.5 mm</span>
+              <span class="v-label">Target Depth</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn vapor-btn">
+            <span>Synchronize Wave</span>
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Futuristic Terminal HUD Strip -->
+    <div class="vapor-terminal-bar">
+      <div class="terminal-col">
+        <span class="terminal-prefix">[SYSTEM]</span>
+        <span class="terminal-text">OPTICAL EMISSION PROTOCOLS NOMINAL &bull; 100% STERILE UV-C ISOLATION</span>
+      </div>
+      <div class="terminal-col telemetry">
+        <i class="fa-solid fa-satellite-dish"></i>
+        <span>TELEMETRY: STABLE</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Final Treatment Section: Prescription Concierge & Calibration -->
+<section class="treatment-final-section" id="prescription">
+  <div class="concierge-container">
+    
+    <!-- Section Header -->
+    <div class="concierge-header">
+      <div class="pill-badge concierge-pill">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Clinical Guidance & Regimen Prescription</span>
+      </div>
+      <h2 class="concierge-title">
+        Treatment Calibration & <span class="highlight-italic">Care Protocols.</span>
+      </h2>
+      <p class="concierge-desc">
+        Calculate your treatment sequence, review clinical pre-procedural guidelines, and lock your bespoke dosage schedule with our attending dermatologists.
+      </p>
+    </div>
+
+    <!-- Dual-Column Interactive Panel -->
+    <div class="concierge-grid">
+      
+      <!-- Left Column: Interactive Treatment Calibrator -->
+      <div class="calibrator-card">
+        <div class="card-head">
+          <div class="card-icon-box">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <div>
+            <h3 class="card-heading">Regimen Calibrator</h3>
+            <span class="card-subheading">Estimate sessions, investment, and biological timeline</span>
+          </div>
+        </div>
+
+        <form class="calibrator-form" id="calibratorForm" onsubmit="return false;">
+          <!-- Select Protocol Type -->
+          <div class="calc-group">
+            <label class="calc-label">Select Focal Therapy</label>
+            <div class="calc-pill-options" id="calcProtocolOptions">
+              <button type="button" class="calc-pill-btn active" data-base-price="4500" data-sessions="3" data-weeks="6">
+                Erbium Laser
+              </button>
+              <button type="button" class="calc-pill-btn" data-base-price="3800" data-sessions="4" data-weeks="4">
+                Hydra Infusion
+              </button>
+              <button type="button" class="calc-pill-btn" data-base-price="2900" data-sessions="2" data-weeks="3">
+                Glycolic Peel
+              </button>
+              <button type="button" class="calc-pill-btn" data-base-price="6200" data-sessions="3" data-weeks="8">
+                PDRN Booster
+              </button>
+            </div>
+          </div>
+
+          <!-- Barrier Severity Slider -->
+          <div class="calc-group">
+            <div class="slider-header">
+              <label class="calc-label">Skin Impairment Grade</label>
+              <span class="slider-val" id="severityDisplay">Moderate (Grade II)</span>
+            </div>
+            <div class="range-wrap">
+              <input type="range" min="1" max="3" value="2" class="calc-range" id="severityRange">
+              <div class="range-labels">
+                <span>Grade I: Mild</span>
+                <span>Grade II: Moderate</span>
+                <span>Grade III: Severe</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="calc-output-box">
+            <div class="output-item">
+              <span class="out-label">Prescribed Cycle</span>
+              <span class="out-val" id="outSessions">3 Sessions</span>
+            </div>
+            <div class="out-divider"></div>
+            <div class="output-item">
+              <span class="out-label">Cellular Timeline</span>
+              <span class="out-val" id="outWeeks">6 Weeks</span>
+            </div>
+            <div class="out-divider"></div>
+            <div class="output-item">
+              <span class="out-label">Est. Protocol Total</span>
+              <span class="out-val out-price" id="outPrice">₹13,500</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn btn-primary calc-action-btn">
+            <span>Prescribe This Protocol</span>
+            <i class="fa-solid fa-arrow-right btn-icon"></i>
+          </a>
+        </form>
+      </div>
+
+      <!-- Right Column: Pre & Post Care Guidelines -->
+      <div class="protocols-card">
+        <div class="card-head">
+          <div class="card-icon-box">
+            <i class="fa-solid fa-notes-medical"></i>
+          </div>
+          <div>
+            <h3 class="card-heading">Preparation & Aftercare</h3>
+            <span class="card-subheading">Mandatory dermatological guidelines</span>
+          </div>
+        </div>
+
+        <div class="guideline-accordion" id="guidelineAccordion">
+          <!-- Item 1 -->
+          <div class="guide-item active">
+            <button type="button" class="guide-trigger" aria-expanded="true">
+              <span class="guide-q">72-Hour Pre-Treatment Preparation</span>
+              <i class="fa-solid fa-plus guide-icon"></i>
+            </button>
+            <div class="guide-drawer">
+              <p>Discontinue prescription retinoids (Tretinoin, Adapalene), AHA/BHA exfoliants, and active benzoyl peroxide formulations. Keep skin adequately hydrated using pure ceramide creams and avoid prolonged solar exposure.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="guide-item">
+            <button type="button" class="guide-trigger" aria-expanded="false">
+              <span class="guide-q">Day 1 to 3 Post-Procedure Recovery</span>
+              <i class="fa-solid fa-plus guide-icon"></i>
+            </button>
+            <div class="guide-drawer">
+              <p>Cleanse exclusively with lukewarm distilled or thermal spring water and non-foaming micellar washes. Apply prescribed lipid-recovery ointments twice daily. Avoid hot saunas, strenuous exertion, and abrasive facial towels.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="guide-item">
+            <button type="button" class="guide-trigger" aria-expanded="false">
+              <span class="guide-q">Sun Protection & Cellular Mantle Lock</span>
+              <i class="fa-solid fa-plus guide-icon"></i>
+            </button>
+            <div class="guide-drawer">
+              <p>Apply non-nano Zinc Oxide SPF 50+ broad-spectrum sunscreen every 3 hours during daylight. Mineral physical blockers prevent post-inflammatory hyperpigmentation (PIH) while cellular restructuring occurs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Protocol Notice -->
+        <div class="download-guide-box">
+          <div class="download-icon">
+            <i class="fa-solid fa-file-medical"></i>
+          </div>
+          <div class="download-text">
+            <strong>Clinical Pre/Post Care PDF</strong>
+            <span>Complimentary digital reference with each booking</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Final Care Strip -->
+    <div class="concierge-support-strip">
+      <div class="support-col">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>24/7 Clinical Post-Procedure Emergency Helpline</span>
+      </div>
+      <div class="support-divider"></div>
+      <div class="support-col">
+        <a href="tel:+919876543210" class="support-phone">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 98765 43210</span>
+        </a>
+      </div>
+      <div class="support-divider"></div>
+      <div class="support-col">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>HIPAA Compliant Dermal Records</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+    <!-- Site Footer -->
+    <footer class="site-footer" id="siteFooter">
+        <div class="footer-container">
+            <!-- Top Grid Layout -->
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Clinical Statement -->
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="brand-logo footer-logo" aria-label="Aura Skincare Clinic">
+                        <img src="./assets/logo 20.webp" alt="Aura Skincare Clinic Logo" class="logo-image"
+                            height="50px" width="150px">
+                    </a>
+                    <p class="brand-desc">
+                        Evidence-based dermatological therapies and customized skin health regimens guided by licensed
+                        practitioners.
+                    </p>
+                    <div class="social-links" aria-label="Social Media">
+                        <a href="error.html" class="social-icon" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="error.html" class="social-icon" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="error.html" class="social-icon" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="error.html" class="social-icon" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links (Synced with Scrollspy) -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link active">Home</a></li>
+                        <li><a href="treatments.html" class="footer-link">Treatments</a></li>
+                        <li><a href="about.html" class="footer-link">About Clinic</a></li>
+                        <li><a href="specialists.html" class="footer-link">Dermatologists</a></li>
+                        <li><a href="reviews.html" class="footer-link">Results</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Treatments -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Clinical Solutions</h4>
+                    <ul class="footer-links static-links">
+                        <li><a href="#treatments">Laser Skin Resurfacing</a></li>
+                        <li><a href="#treatments">Chemical Peels & Glycolic</a></li>
+                        <li><a href="#treatments">Targeted Acne Extraction</a></li>
+                        <li><a href="#treatments">Dermal Barrier Infusions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Clinic Info & Hours -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Clinic Hours</h4>
+                    <ul class="schedule-list">
+                        <li>
+                            <span class="schedule-day">Mon - Fri:</span>
+                            <span class="schedule-time">09:00 AM - 07:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="schedule-day">Saturday:</span>
+                            <span class="schedule-time">10:00 AM - 05:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="schedule-day">Sunday:</span>
+                            <span class="schedule-status">By Prior Appointment</span>
+                        </li>
+                    </ul>
+                    <div class="footer-badge">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>ISO 9001 Certified Dermatology Unit</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    &copy; 2026 Aura Skincare Clinic. All rights reserved.
+                </p>
+                <div class="legal-links">
+                    <a href="error.html">Privacy Policy</a>
+                    <span class="divider">&bull;</span>
+                    <a href="error.html">Terms of Care</a>
+                    <span class="divider">&bull;</span>
+                    <a href="error.html">Medical Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- GSAP & ScrollTrigger Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+        <script src="treatments.js"></script>
+
+
+</body>
+
+</html>
