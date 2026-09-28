@@ -4,7 +4,8 @@
 
 .results-hero-section {
   position: relative;
-  background-color: var(--primary-deep); /* #162a2c */
+  background-color: var(--primary-deep);
+  /* #162a2c */
   color: var(--text-inverse);
   padding-top: calc(85px + 2.5rem);
   padding-bottom: 5.5rem;
@@ -313,9 +314,17 @@
 }
 
 @keyframes pulseResult {
-  0% { box-shadow: 0 0 0 0 rgba(85, 196, 139, 0.5); }
-  70% { box-shadow: 0 0 0 8px rgba(85, 196, 139, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(85, 196, 139, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(85, 196, 139, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(85, 196, 139, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(85, 196, 139, 0);
+  }
 }
 
 /* Floating Case Study Pod */
@@ -419,7 +428,8 @@
 
 .results-vapor-section {
   position: relative;
-  background-color: var(--primary-deep); /* #162a2c */
+  background-color: var(--primary-deep);
+  /* #162a2c */
   color: var(--text-inverse);
   padding: 5.5rem 0 6.5rem 0;
   overflow: hidden;
@@ -455,7 +465,7 @@
   left: -50%;
   width: 200%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(232, 180, 184, 0.14) 1px, transparent 1px),
     linear-gradient(90deg, rgba(197, 155, 123, 0.14) 1px, transparent 1px);
   background-size: 45px 45px;
@@ -525,20 +535,20 @@
   border: 1.5px solid rgba(232, 180, 184, 0.25);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.4),
     0 0 20px rgba(232, 180, 184, 0.1);
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s ease,
-              box-shadow 0.4s ease;
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .telemetry-card:hover {
   transform: translateY(-8px);
   border-color: var(--accent-blush);
-  box-shadow: 
+  box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.5),
     0 0 25px rgba(232, 180, 184, 0.3);
 }
@@ -550,7 +560,7 @@
 
 .featured-telemetry:hover {
   border-color: var(--accent-copper);
-  box-shadow: 
+  box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.5),
     0 0 30px rgba(197, 155, 123, 0.4);
 }

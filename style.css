@@ -484,6 +484,8 @@ body.nav-locked {
 
 .hero-btn-group .btn {
   width: 100%;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Trust Proof Numbers */

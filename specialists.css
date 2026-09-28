@@ -4,7 +4,8 @@
 
 .specialists-hero-section {
   position: relative;
-  background-color: var(--primary-deep); /* Explicit #162a2c */
+  background-color: var(--primary-deep);
+  /* Explicit #162a2c */
   color: var(--text-inverse);
   padding-top: calc(85px + 2.5rem);
   padding-bottom: 5rem;
@@ -265,9 +266,17 @@
 }
 
 @keyframes pulseSpecialist {
-  0% { box-shadow: 0 0 0 0 rgba(85, 196, 139, 0.5); }
-  70% { box-shadow: 0 0 0 8px rgba(85, 196, 139, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(85, 196, 139, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(85, 196, 139, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(85, 196, 139, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(85, 196, 139, 0);
+  }
 }
 
 /* Floating Faculty Credential Card */
@@ -416,7 +425,8 @@
   grid-template-columns: 1fr;
   gap: 2.5rem;
   margin-bottom: 3.5rem;
-  perspective: 1200px; /* 3D depth context */
+  perspective: 1200px;
+  /* 3D depth context */
 }
 
 /* Outer Tilt Card Wrapper */
@@ -474,7 +484,8 @@
   height: 270px;
   overflow: hidden;
   background-color: var(--primary-deep);
-  transform: translateZ(20px); /* 3D layer lift */
+  transform: translateZ(20px);
+  /* 3D layer lift */
 }
 
 .physician-photo {
@@ -540,7 +551,8 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  transform: translateZ(30px); /* 3D layer pop */
+  transform: translateZ(30px);
+  /* 3D layer pop */
 }
 
 .doctor-meta-strip {
@@ -718,7 +730,8 @@
   background-color: var(--bg-main);
   padding: 5rem 0 6rem 0;
   position: relative;
-  overflow: visible; /* Required for sticky card stacking */
+  overflow: visible;
+  /* Required for sticky card stacking */
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -930,10 +943,21 @@
 }
 
 /* Visual Subtle Card Themes for Tactile Distinctions */
-.card-step-1 { background-color: #ffffff; }
-.card-step-2 { background-color: #fbfaf8; }
-.card-step-3 { background-color: #faf9f6; }
-.card-step-4 { background-color: #f8f6f2; }
+.card-step-1 {
+  background-color: #ffffff;
+}
+
+.card-step-2 {
+  background-color: #fbfaf8;
+}
+
+.card-step-3 {
+  background-color: #faf9f6;
+}
+
+.card-step-4 {
+  background-color: #f8f6f2;
+}
 
 /* ==========================================================================
    768PX RESPONSIVE BREAKPOINT & KINETIC OVERLAPPING LOGIC
@@ -959,16 +983,28 @@
   /* Sticky stacking behavior on tablet and desktop */
   .stack-card {
     position: sticky;
-    top: 120px; /* Offset below fixed site-header */
+    top: 120px;
+    /* Offset below fixed site-header */
     margin-bottom: 2.5rem;
     box-shadow: 0 25px 60px rgba(22, 42, 44, 0.12);
   }
 
   /* Progressive sticky stacking offsets for tactile peeking */
-  .card-step-1 { top: 110px; }
-  .card-step-2 { top: 130px; }
-  .card-step-3 { top: 150px; }
-  .card-step-4 { top: 170px; }
+  .card-step-1 {
+    top: 110px;
+  }
+
+  .card-step-2 {
+    top: 130px;
+  }
+
+  .card-step-3 {
+    top: 150px;
+  }
+
+  .card-step-4 {
+    top: 170px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -990,10 +1026,21 @@
     margin-bottom: 3.5rem;
   }
 
-  .card-step-1 { top: 120px; }
-  .card-step-2 { top: 140px; }
-  .card-step-3 { top: 160px; }
-  .card-step-4 { top: 180px; }
+  .card-step-1 {
+    top: 120px;
+  }
+
+  .card-step-2 {
+    top: 140px;
+  }
+
+  .card-step-3 {
+    top: 160px;
+  }
+
+  .card-step-4 {
+    top: 180px;
+  }
 
   .stack-card-inner {
     padding: 3.25rem 2.75rem;
@@ -1085,7 +1132,7 @@
   z-index: 1;
   pointer-events: none;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tier-segment-btn {
@@ -1146,8 +1193,8 @@
   visibility: hidden;
   transform: translateY(16px);
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.45s ease;
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.45s ease;
   pointer-events: none;
 }
 
@@ -1332,9 +1379,17 @@
 }
 
 @keyframes pulseLiveDot {
-  0% { box-shadow: 0 0 0 0 rgba(85, 196, 139, 0.5); }
-  70% { box-shadow: 0 0 0 8px rgba(85, 196, 139, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(85, 196, 139, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(85, 196, 139, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(85, 196, 139, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(85, 196, 139, 0);
+  }
 }
 
 /* Bottom Governance Strip */
@@ -1468,7 +1523,8 @@
 .specialist-intake-card {
   position: relative;
   z-index: 1;
-  background-color: var(--primary-deep); /* #162a2c */
+  background-color: var(--primary-deep);
+  /* #162a2c */
   color: var(--text-inverse);
   border-radius: 32px;
   padding: 2.5rem 1.75rem;
