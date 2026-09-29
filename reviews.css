@@ -848,14 +848,13 @@
 
 
 
-
 /* ==========================================================================
-   INTERACTIVE BEFORE/AFTER SPLIT-SCREEN SLIDER SECTION
+   INTERACTIVE BEFORE/AFTER SPLIT-SCREEN SLIDER SECTION (MOBILE REFINED)
    ========================================================================== */
 
 .split-slider-section {
   background-color: var(--bg-surface);
-  padding: 5rem 0 6rem 0;
+  padding: 3.5rem 0 4.5rem 0;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
@@ -864,14 +863,15 @@
 .split-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 /* Header */
 .split-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 2.5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -879,7 +879,7 @@
 
 .split-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 2.85rem);
+  font-size: clamp(1.85rem, 5vw, 2.85rem);
   color: var(--primary-deep);
   line-height: 1.2;
   margin-bottom: 0.85rem;
@@ -888,7 +888,7 @@
 }
 
 .split-desc {
-  font-size: 0.98rem;
+  font-size: 0.925rem;
   line-height: 1.65;
   color: var(--text-body);
   margin-bottom: 0;
@@ -898,15 +898,18 @@
 .split-viewport {
   position: relative;
   width: 100%;
-  height: 380px;
-  border-radius: 28px;
+  aspect-ratio: 4 / 5;       /* Dynamic fluid height instead of fixed 380px */
+  max-height: 520px;
+  border-radius: 24px;
   overflow: hidden;
   user-select: none;
+  -webkit-user-select: none;
   box-shadow: var(--shadow-lg), 0 20px 45px rgba(22, 42, 44, 0.08);
-  border: 4px solid var(--bg-main);
+  border: 3px solid var(--bg-main);
   background-color: var(--primary-deep);
   cursor: ew-resize;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
+  touch-action: none;        /* Ensures smooth horizontal dragging on touch */
 }
 
 .split-layer {
@@ -922,50 +925,54 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   pointer-events: none;
 }
 
-/* Foreground Clipped Layer (Controlled by slider width) */
+/* Foreground Clipped Layer (Controlled by JS slider percentage) */
 .layer-before {
   width: 50%;
   z-index: 2;
-  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Force before image to retain full parent viewport width */
+/* Crucial Fix: Keeps image locked to viewport width so it never squishes */
 .layer-before .split-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
-  min-width: 100%;
   max-width: none;
 }
 
-/* Tags on Image Corners */
+/* Responsive Indicator Tags (Avoids Collisions on Mobile) */
 .view-tag {
   position: absolute;
-  top: 18px;
-  padding: 0.35rem 0.85rem;
+  top: 12px;
+  padding: 0.28rem 0.65rem;
   border-radius: 9999px;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   pointer-events: none;
   z-index: 5;
+  white-space: nowrap;
 }
 
 .tag-before {
-  left: 18px;
-  background: rgba(22, 42, 44, 0.85);
+  left: 12px;
+  background: rgba(22, 42, 44, 0.88);
   color: var(--accent-blush);
   border: 1px solid rgba(232, 180, 184, 0.35);
 }
 
 .tag-after {
-  right: 18px;
-  background: rgba(197, 155, 123, 0.85);
+  right: 12px;
+  background: rgba(197, 155, 123, 0.9);
   color: var(--primary-deep);
   border: 1px solid var(--accent-copper);
 }
@@ -984,19 +991,18 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  transition: transform 0.05s ease-out;
 }
 
 .handle-line {
   flex: 1;
   width: 2px;
   background: #ffffff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.45);
 }
 
 .handle-knob {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--primary-deep);
   border: 2px solid #ffffff;
@@ -1004,51 +1010,64 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
 }
 
-/* Live Floating Reading Badge */
+/* Fixed Live Floating Reading Badge (Mobile Auto-Centering & Overflow Fix) */
 .split-live-data {
   position: absolute;
-  bottom: 18px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(22, 42, 44, 0.9);
+  width: calc(100% - 24px);
+  max-width: 330px;
+  background: rgba(22, 42, 44, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(232, 180, 184, 0.3);
-  padding: 0.45rem 1rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 9999px;
   color: var(--text-inverse);
-  font-size: 0.775rem;
+  font-size: 0.7rem;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  white-space: nowrap;
+  justify-content: center;
+  gap: 0.5rem;
   pointer-events: none;
-  z-index: 5;
+  z-index: 12;            /* Elevate above slider curtain */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.split-live-data span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .data-indicator-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #55c48b;
   box-shadow: 0 0 0 3px rgba(85, 196, 139, 0.3);
+  flex-shrink: 0;
 }
 
 /* Metadata Case Info Card */
 .split-meta-card {
   background-color: var(--bg-main);
   border: 1px solid var(--border-subtle);
-  border-radius: 24px;
-  padding: 1.75rem 2rem;
+  border-radius: 20px;
+  padding: 1.5rem 1.25rem;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .meta-col {
@@ -1057,18 +1076,19 @@
 }
 
 .meta-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--text-muted);
   letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .meta-value {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--primary-deep);
   font-weight: 600;
+  line-height: 1.35;
 }
 
 .text-accent {
@@ -1086,22 +1106,57 @@
 }
 
 /* ==========================================================================
-   768PX RESPONSIVE BREAKPOINT
+   768PX RESPONSIVE BREAKPOINT (TABLET & DESKTOP)
    ========================================================================== */
 @media (min-width: 768px) {
   .split-slider-section {
-    padding: 6.5rem 0 7.5rem 0;
+    padding: 6rem 0 7rem 0;
+  }
+
+  .split-container {
+    padding: 0 2rem;
+  }
+
+  .split-header {
+    margin-bottom: 3.5rem;
   }
 
   .split-viewport {
-    height: 520px;
+    aspect-ratio: 16 / 9;
+    max-height: 520px;
+    border-radius: 28px;
+    border-width: 4px;
+    margin-bottom: 2rem;
   }
 
-  /* Horizontal metadata strip layout */
+  .view-tag {
+    top: 18px;
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .tag-before { left: 18px; }
+  .tag-after  { right: 18px; }
+
+  .handle-knob {
+    width: 44px;
+    height: 44px;
+    font-size: 0.95rem;
+  }
+
+  .split-live-data {
+    bottom: 18px;
+    width: auto;
+    font-size: 0.775rem;
+    padding: 0.45rem 1rem;
+  }
+
   .split-meta-card {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 1.75rem 2rem;
+    border-radius: 24px;
     gap: 1.5rem;
   }
 
@@ -1122,14 +1177,13 @@
 
 @media (min-width: 1024px) {
   .split-viewport {
-    height: 580px;
+    max-height: 580px;
   }
 
   .split-meta-card {
     padding: 2rem 2.5rem;
   }
 }
-
 
 
 

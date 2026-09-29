@@ -127,7 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
       .from('.hero-pill-badge', { opacity: 0, y: 15, duration: 0.7, delay: 0.1 })
       .from('.hero-title', { opacity: 0, y: 30, duration: 0.9 }, '-=0.4')
       .from('.hero-desc', { opacity: 0, y: 20, duration: 0.7 }, '-=0.5')
-      .from('.hero-btn-group .btn', { opacity: 0, y: 15, stagger: 0.12, duration: 0.6 }, '-=0.4')
+      .fromTo('.hero-btn-group .btn', 
+        { opacity: 0, y: 15 }, 
+        { opacity: 1, y: 0, stagger: 0.12, duration: 0.6, clearProps: 'all' }, 
+        '-=0.4'
+      )
       .from('.trust-stat', { opacity: 0, y: 15, stagger: 0.1, duration: 0.6 }, '-=0.4')
       .from('.visual-frame', { opacity: 0, scale: 0.95, y: 20, duration: 1, ease: 'expo.out' }, '-=1')
       .from('.floating-glass-card', { opacity: 0, y: 25, stagger: 0.15, duration: 0.7, ease: 'back.out(1.4)' }, '-=0.5');
@@ -505,7 +509,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 11. FINAL CTA BOOKING FORM VALIDATION & DROPDOWN
+  // 11. FINAL CTA BOOKING FORM VALIDATION, AUTO-CLEAR & DROPDOWN
   // ==========================================================================
   const form = document.getElementById('ctaBookingForm');
   const nameInput = document.getElementById('ctaName');
@@ -610,6 +614,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!isValid) return;
 
+      // 1. Store target URL before clearing fields
+      const destinationPage = targetPage;
+
+      // 2. Automatically clear all input fields & custom controls
+      nameInput.value = '';
+      phoneInput.value = '';
+      selectedConcernInput.value = '';
+      selectedText.textContent = 'Select Primary Focus';
+      dropdownTrigger.classList.remove('has-value');
+      dropdownItems.forEach(item => item.classList.remove('is-selected'));
+
+      nameGroup.classList.remove('has-error');
+      phoneGroup.classList.remove('has-error');
+      concernGroup.classList.remove('has-error');
+
+      // 3. Button state & navigation routing
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
         <i class="fa-solid fa-circle-notch fa-spin"></i>
@@ -617,9 +637,9 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       try {
-        const response = await fetch(targetPage, { method: 'HEAD' });
+        const response = await fetch(destinationPage, { method: 'HEAD' });
         if (response.ok) {
-          window.location.href = targetPage;
+          window.location.href = destinationPage;
         } else {
           window.location.href = 'error.html';
         }

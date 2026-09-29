@@ -149,62 +149,68 @@ if (document.querySelector('.stroke-timeline-section')) {
 
 
 
-
 // ==========================================================================
-// ABOUT PAGE: RETRO-FUTURISM LAB GSAP ENTRANCE ANIMATIONS
+// ABOUT PAGE: RETRO-FUTURISM LAB GSAP ENTRANCE ANIMATIONS (RESPONSIVE)
 // ==========================================================================
 if (document.querySelector('.about-vapor-section')) {
-    // Header Reveal
-    gsap.from('.about-vapor-header > *', {
-        scrollTrigger: {
-            trigger: '.about-vapor-section',
-            start: 'top 80%'
-        },
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        duration: 0.85,
-        ease: 'power3.out'
-    });
+  const isMobile = window.innerWidth < 768;
 
-    // Left Column CRT Terminal Card Slide-in
-    gsap.from('.crt-terminal-card', {
-        scrollTrigger: {
-            trigger: '.vapor-console-layout',
-            start: 'top 75%'
-        },
-        opacity: 0,
-        x: -40,
-        duration: 1,
-        ease: 'power3.out'
-    });
+  // Header Reveal
+  gsap.from('.about-vapor-header > *', {
+    scrollTrigger: {
+      trigger: '.about-vapor-section',
+      start: 'top 85%'
+    },
+    opacity: 0,
+    y: 25,
+    stagger: 0.15,
+    duration: 0.85,
+    ease: 'power3.out',
+    clearProps: 'all'
+  });
 
-    // Right Column Feature Pods Stagger
-    gsap.from('.vapor-feature-pod', {
-        scrollTrigger: {
-            trigger: '.vapor-features-stack',
-            start: 'top 75%'
-        },
-        opacity: 0,
-        x: 40,
-        stagger: 0.18,
-        duration: 0.9,
-        ease: 'power3.out'
-    });
+  // Left Column CRT Terminal Card
+  gsap.from('.crt-terminal-card', {
+    scrollTrigger: {
+      trigger: '.vapor-console-layout',
+      start: 'top 80%'
+    },
+    opacity: 0,
+    x: isMobile ? 0 : -35,
+    y: isMobile ? 25 : 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    clearProps: 'all'
+  });
 
-    // Bottom Ticker Reveal
-    gsap.from('.vapor-sub-ticker', {
-        scrollTrigger: {
-            trigger: '.vapor-sub-ticker',
-            start: 'top 90%'
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.75,
-        ease: 'power2.out'
-    });
+  // Right Column Feature Pods (NO X-AXIS SHIFT ON MOBILE)
+  gsap.from('.vapor-feature-pod', {
+    scrollTrigger: {
+      trigger: '.vapor-features-stack',
+      start: 'top 80%'
+    },
+    opacity: 0,
+    x: isMobile ? 0 : 35,
+    y: isMobile ? 25 : 0,
+    stagger: 0.14,
+    duration: 0.85,
+    ease: 'power3.out',
+    clearProps: 'all' // Crucial: strips inline transforms so cards stay 100% aligned
+  });
+
+  // Bottom Ticker Reveal
+  gsap.from('.vapor-sub-ticker', {
+    scrollTrigger: {
+      trigger: '.vapor-sub-ticker',
+      start: 'top 92%'
+    },
+    opacity: 0,
+    y: 20,
+    duration: 0.75,
+    ease: 'power2.out',
+    clearProps: 'all'
+  });
 }
-
 
 
 

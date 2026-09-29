@@ -1860,6 +1860,7 @@ body.nav-locked {
 .morph-selector-nav {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   background-color: var(--bg-muted);
