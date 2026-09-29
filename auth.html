@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -8,9 +9,11 @@
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- 
+
   <style>
     /* ==========================================================================
        DESIGN TOKENS & SYSTEM BASE
@@ -39,16 +42,20 @@
       --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       max-width: 100%;
-      overflow-x: hidden; /* Strictly prevent horizontal scrolling */
+      overflow-x: hidden;
+      /* Strictly prevent horizontal scrolling */
     }
 
     body {
@@ -70,7 +77,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem 0.85rem; /* Compact mobile padding */
+      padding: 1.25rem 0.85rem;
+      /* Compact mobile padding */
       overflow: hidden;
       box-sizing: border-box;
     }
@@ -105,7 +113,8 @@
       width: 100%;
       max-width: 100%;
       display: grid;
-      grid-template-columns: minmax(0, 1fr); /* Prevents child items from bursting grid */
+      grid-template-columns: minmax(0, 1fr);
+      /* Prevents child items from bursting grid */
       gap: 1.5rem;
       position: relative;
       z-index: 1;
@@ -240,7 +249,8 @@
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 20px;
-      padding: 1.6rem 1.15rem; /* Fitted padding for mobile */
+      padding: 1.6rem 1.15rem;
+      /* Fitted padding for mobile */
       box-shadow: var(--shadow-lg);
       box-sizing: border-box;
     }
@@ -291,7 +301,8 @@
 
     .custom-role-switcher {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr)); /* Crucial: 0 min width allows text ellipsis */
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      /* Crucial: 0 min width allows text ellipsis */
       gap: 0.5rem;
       margin-bottom: 1.15rem;
       width: 100%;
@@ -309,7 +320,8 @@
       cursor: pointer;
       text-align: left;
       outline: none;
-      min-width: 0; /* Prevents overflow */
+      min-width: 0;
+      /* Prevents overflow */
       transition: all var(--transition-fast);
       box-sizing: border-box;
     }
@@ -451,7 +463,8 @@
     }
 
     .auth-form .password-wrap input {
-      padding-right: 2.85rem; /* Space for the toggle eye button */
+      padding-right: 2.85rem;
+      /* Space for the toggle eye button */
     }
 
     .auth-form input:focus {
@@ -507,9 +520,19 @@
     }
 
     @keyframes authShake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      75% { transform: translateX(4px); }
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-4px);
+      }
+
+      75% {
+        transform: translateX(4px);
+      }
     }
 
     /* Primary Action Buttons */
@@ -571,6 +594,59 @@
 
     .switch-link:hover {
       color: var(--primary-deep);
+    }
+
+    /* --- Brand Pane Top Bar & Back Button --- */
+    .auth-brand-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      flex-wrap: wrap;
+      /* Wraps cleanly on ultra-narrow viewports */
+    }
+
+    .auth-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(229, 224, 216, 0.2);
+      color: var(--accent-blush);
+      font-family: var(--font-body);
+      font-size: 0.775rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .auth-back-btn i {
+      font-size: 0.8rem;
+      transition: transform var(--transition-fast);
+    }
+
+    .auth-back-btn:hover {
+      background: var(--accent-copper);
+      color: var(--primary-deep);
+      border-color: var(--accent-copper);
+      box-shadow: 0 4px 12px rgba(197, 155, 123, 0.35);
+      transform: translateX(-3px);
+    }
+
+    .auth-back-btn:hover i {
+      transform: translateX(-2px);
+    }
+
+    /* 768px Tablet & Desktop Adjustment */
+    @media (min-width: 768px) {
+      .auth-back-btn {
+        font-size: 0.813rem;
+        padding: 0.55rem 1.1rem;
+      }
     }
 
     /* ==========================================================================
@@ -644,6 +720,7 @@
     }
   </style>
 </head>
+
 <body class="auth-page-body">
 
   <main class="auth-wrapper">
@@ -654,9 +731,18 @@
 
       <!-- Left Column: Editorial Clinic Branding -->
       <div class="auth-brand-pane">
-        <a href="error.html" class="auth-logo-link">
-          <img src="./assets/logo 20.webp" alt="Aura Logo" height="50" width="150">
-        </a>
+        <!-- Brand Pane Top Bar with Logo & Go Back Link -->
+        <div class="auth-brand-topbar">
+          <a href="index.html" class="auth-logo-link" aria-label="Aura Skincare Clinic Home">
+            <img src="./assets/logo 20.webp" alt="Aura Logo" height="50" width="150">
+          </a>
+          <a href="index.html" class="auth-back-btn" aria-label="Return to website home page">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Return Home</span>
+          </a>
+        </div>
+
+
 
         <div class="brand-message">
           <div class="pill-badge auth-pill">
@@ -670,7 +756,8 @@
           </h1>
 
           <p class="brand-subtext">
-            Access secure diagnostic profiles, custom lipid compounding formulations, and direct doctor consultations under HIPAA-compliant safeguards.
+            Access secure diagnostic profiles, custom lipid compounding formulations, and direct doctor consultations
+            under HIPAA-compliant safeguards.
           </p>
         </div>
 
@@ -703,7 +790,8 @@
             <!-- Custom Role Selector (Signup) -->
             <div class="form-group role-group">
               <label class="custom-label">Account Classification</label>
-              <div class="custom-role-switcher" id="signupRoleSwitcher" role="radiogroup" aria-label="Signup Account Role">
+              <div class="custom-role-switcher" id="signupRoleSwitcher" role="radiogroup"
+                aria-label="Signup Account Role">
                 <button type="button" class="role-btn active" data-role="client" role="radio" aria-checked="true">
                   <i class="fa-solid fa-user-shield"></i>
                   <div class="role-text">
@@ -748,8 +836,10 @@
                 <label for="signupPassword">Password</label>
                 <div class="input-wrap password-wrap">
                   <i class="fa-solid fa-lock input-icon"></i>
-                  <input type="password" id="signupPassword" placeholder="Minimum 6 characters" autocomplete="new-password" required>
-                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility" data-target="signupPassword">
+                  <input type="password" id="signupPassword" placeholder="Minimum 6 characters"
+                    autocomplete="new-password" required>
+                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility"
+                    data-target="signupPassword">
                     <i class="fa-regular fa-eye-slash"></i>
                   </button>
                 </div>
@@ -828,8 +918,10 @@
                 </div>
                 <div class="input-wrap password-wrap">
                   <i class="fa-solid fa-lock input-icon"></i>
-                  <input type="password" id="loginPassword" placeholder="Minimum 6 characters" autocomplete="current-password" required>
-                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility" data-target="loginPassword">
+                  <input type="password" id="loginPassword" placeholder="Minimum 6 characters"
+                    autocomplete="current-password" required>
+                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility"
+                    data-target="loginPassword">
                     <i class="fa-regular fa-eye-slash"></i>
                   </button>
                 </div>
@@ -854,7 +946,8 @@
           <div class="auth-view" id="forgotView">
             <div class="auth-card-head">
               <h2 class="view-title">Reset Access Token</h2>
-              <p class="view-desc">Submit your registered email. Once validated, our system will route you to the security dispatch.</p>
+              <p class="view-desc">Submit your registered email. Once validated, our system will route you to the
+                security dispatch.</p>
             </div>
 
             <form class="auth-form" id="forgotForm" novalidate>
@@ -862,7 +955,8 @@
                 <label for="forgotEmail">Registered Clinical Email</label>
                 <div class="input-wrap">
                   <i class="fa-regular fa-envelope input-icon"></i>
-                  <input type="email" id="forgotEmail" placeholder="registered@auraclinic.com" autocomplete="off" required>
+                  <input type="email" id="forgotEmail" placeholder="registered@auraclinic.com" autocomplete="off"
+                    required>
                 </div>
                 <span class="field-error" id="forgotEmailError">Please enter a valid email address format.</span>
               </div>
@@ -984,7 +1078,7 @@
       // ======================================================================
       const nameInputs = [
         { input: document.getElementById('signupName'), group: document.getElementById('signupNameGroup') },
-        { input: document.getElementById('loginName'),  group: document.getElementById('loginNameGroup') }
+        { input: document.getElementById('loginName'), group: document.getElementById('loginNameGroup') }
       ];
 
       nameInputs.forEach(({ input, group }) => {
@@ -1138,8 +1232,8 @@
           `;
 
           // Determine target dashboard file
-          const targetDashboard = selectedRole === 'admin' 
-            ? 'admin.html' 
+          const targetDashboard = selectedRole === 'admin'
+            ? 'admin.html'
             : 'client.html';
 
           // Direct redirection without blocked network HEAD requests
@@ -1180,4 +1274,5 @@
     });
   </script>
 </body>
+
 </html>
